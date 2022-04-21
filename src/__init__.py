@@ -8,6 +8,8 @@ from apispec.ext.marshmallow import MarshmallowPlugin
 from apispec_webframeworks.flask import FlaskPlugin
 from flask import Flask, jsonify, render_template, send_from_directory
 
+from src.api.taskEventId import listTaskEvent
+
 
 env = os.getenv("ENV", "development")
 
@@ -17,7 +19,7 @@ def create_app():
 
     OPENAPI_SPEC = """
         servers:
-        - url: http://192.168.17.112:9997/
+        - url: http://127.0.0.1:9997/
         - url: https://staging.bizflycloud.vn/api/iam
         - url: https://manage.bizflycloud.vn/api/iam
         - url: https://dev.bizflycloud.vn/api/iam
@@ -59,6 +61,7 @@ def create_app():
     with app.test_request_context():
         spec.path(view=healthCheck)
         spec.path(view=getTaskEvent)
+        spec.path(view=listTaskEvent)
         spec.path(view=listProject)
         spec.path(view=getProject)
         spec.path(view=getUserProject)
