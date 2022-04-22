@@ -70,10 +70,10 @@ def create_app():
         spec.path(view=deleteProject)
 
     @app.route('/docs')
-    @app.route('/<path:uri>/docs/<path:path>')
-    def swagger_docs(uri=None, path=None):
+    @app.route('/docs/<path:path>')
+    def swagger_docs(path=None):
         if not path or path == 'index.html':
-            return render_template('index.html', base_url=f"{uri}/docs")
+            return render_template('index.html', base_url="/docs")
         else:
             return send_from_directory('../swagger/static', path)
     return app
