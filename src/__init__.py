@@ -16,7 +16,7 @@ env = os.getenv("ENV", "development")
 def create_app():
     app = Flask(__name__, template_folder='../swagger/templates')
     app.config['JSON_SORT_KEYS'] = False
-    app.config["BASE_URL"] = "/api/iam/v2/"
+
     OPENAPI_SPEC = """
         servers:
         - url: http://127.0.0.1:9997/
