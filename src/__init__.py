@@ -16,13 +16,13 @@ env = os.getenv("ENV", "development")
 def create_app():
     app = Flask(__name__, template_folder='../swagger/templates')
     app.config['JSON_SORT_KEYS'] = False
-
+    app.config["BASE_URL"] = "/api/iam/v2/"
     OPENAPI_SPEC = """
         servers:
         - url: http://127.0.0.1:9997/
-        - url: https://staging.bizflycloud.vn/api/iam
-        - url: https://manage.bizflycloud.vn/api/iam
-        - url: https://dev.bizflycloud.vn/api/iam
+        - url: https://staging2.bizflycloud.vn/api/iam/v2
+        - url: https://manage.bizflycloud.vn/api/iam/v2
+        - url: https://dev.bizflycloud.vn/api/iam/v2
     """
 
     settings = yaml.safe_load(OPENAPI_SPEC)
@@ -70,11 +70,10 @@ def create_app():
         spec.path(view=deleteProject)
 
     @app.route('/docs')
-    @app.route('/docs/<path:path>')
-    def swagger_docs(path=None):
+    @app.route('/<path:uri>/docs/<path:path>')
+    def swagger_docs(uri=None, path=None):
         if not path or path == 'index.html':
-            return render_template('index.html', base_url='/docs')
+            return render_template('index.html', base_url=f"{uri}/docs")
         else:
             return send_from_directory('../swagger/static', path)
-
     return app

@@ -6,7 +6,7 @@ from src.schema.user_schema import *
 from flask import jsonify
 
 
-@bp.route('/v2/task-event/<project_uuid>')
+@bp.route('/task-event/<project_uuid>')
 def listTaskEvent(project_uuid):
     """List task event info
     ---
@@ -81,7 +81,7 @@ def listTaskEvent(project_uuid):
 
     return jsonify(listTaskEvent)
 
-@bp.route('/v2/task-event/<task_event_id>')
+@bp.route('/task-event/<task_event_id>')
 def getTaskEvent(task_event_id):
     """Get result task event info
     ---
