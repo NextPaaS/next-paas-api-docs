@@ -40,7 +40,6 @@ def create_app():
             "auth": "Thifnmi",
             "full name": "Tu Van Thin",
             "email": {
-                "personal": "tuthin2k@gmail.com",
                 "VCCorp": "thintuvan@vccorp.vn",
                 "VCCloud": "thintv@vccloud.vn"
             },
