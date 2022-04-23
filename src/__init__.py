@@ -80,4 +80,4 @@ def create_app():
                 return render_template('index.html', base_url=f"{uri}/docs")
         else:
             return send_from_directory('../swagger/static', path)
-     return app
+    return app
