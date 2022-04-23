@@ -1,6 +1,6 @@
 variables:
   REGISTRY: hub.paas.vn
-  #HUB_USERNAME: gitlab-runner
+  ##HUB_USERNAME: gitlab-runner
   HUB_NAMESPACE: openstack
   
   HN_VALUES_FILE: values_stg2_hn.yaml
