@@ -14,7 +14,7 @@ from src.api.taskEventId import listTaskEvent
 env = os.getenv("ENV", "development")
 
 def create_app():
-    app = Flask(__name__, template_folder='../swagger/templates')
+    app = Flask(__name__, template_folder='../templates', static_folder='../static')
     app.config['JSON_SORT_KEYS'] = False
 
     OPENAPI_SPEC = """
@@ -80,5 +80,5 @@ def create_app():
 #            else:
 #                return render_template('index.html', base_url=f"{uri}/docs")
         else:
-            return send_from_directory('../swagger/static', path)
+            return send_from_directory('../static', path)
     return app
