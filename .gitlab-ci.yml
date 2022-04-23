@@ -1,3 +1,4 @@
+###########
 variables:
   REGISTRY: hub.paas.vn
   ##HUB_USERNAME: gitlab-runner
