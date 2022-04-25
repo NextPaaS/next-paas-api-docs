@@ -172,9 +172,9 @@ def createProject():
             -   name: user_uuid
                 in: header
                 description: UUID of user
-                required: true
                 schema:
                     type: string
+                    format: uuid
             -   name: user_email
                 in: header
                 description: email of user
@@ -265,7 +265,8 @@ def getProject(project_uuid):
                 description: UUID of project
                 required: true
                 schema:
-                    type: string 
+                    type: string
+                    format: uuid
         responses:
             200:
                 description: info project
@@ -330,6 +331,7 @@ def getUserProject(project_uuid):
                 required: true
                 schema:
                     type: string
+                    format: uuid
             -   name: all
                 in: query
                 schema:
@@ -479,6 +481,7 @@ def updateProject(project_uuid):
                 required: true
                 schema:
                     type: string
+                    format: uuid
             -   name: project_name
                 in: header
                 description: project name user want create
@@ -566,6 +569,7 @@ def deleteProject(project_uuid):
                 required: true
                 schema:
                     type: string
+                    format: uuid
         responses:
             200:
                 description: delete project
