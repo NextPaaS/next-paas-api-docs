@@ -1,10 +1,24 @@
 from marshmallow import Schema, fields
-
+from .utils import *
 
 class TaskEvent(Schema):
     task_event_id = fields.Str()
     type = fields.Str()
     status = fields.Str()
+
+
+class TaskEventResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEvent)
+
+class ListTaskEventResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEvent)
+    metadata = fields.Nested(Metadata)
 
 
 class PayloadCreateProject(Schema):
@@ -31,3 +45,26 @@ class TaskEventUpdateProject(Schema):
 class TaskEventDeleteProject(Schema):
     task_event = fields.Nested(TaskEvent)
     project = fields.Nested(ValuesProject)
+
+
+class TaskEventCreateProjectResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEventCreateProject)
+    metadata = fields.Nested(Metadata)
+
+class TaskEventUpdateProjectResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEventUpdateProject)
+    metadata = fields.Nested(Metadata)
+
+
+class TaskEventDeleteProjectResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEventDeleteProject)
+    metadata = fields.Nested(Metadata)

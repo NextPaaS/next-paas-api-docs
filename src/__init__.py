@@ -59,8 +59,8 @@ def create_app():
 
     with app.test_request_context():
         spec.path(view=healthCheck)
-        spec.path(view=getTaskEvent)
         spec.path(view=listTaskEvent)
+        spec.path(view=getTaskEvent)
         spec.path(view=listProject)
         spec.path(view=getProject)
         spec.path(view=getUserProject)

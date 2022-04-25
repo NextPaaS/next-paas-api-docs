@@ -61,7 +61,7 @@ def listProject():
                 in: query
                 schema:
                     type: string
-                enum: [asc, desc]
+                    enum: [asc, desc]
                 description: >
                     Sort order:
                         * `project_name:asc` - Ascending, from A to Z
@@ -197,7 +197,7 @@ def createProject():
                 description: Task event info
                 content:
                     application/json:
-                        schema: TaskEventCreateProject
+                        schema: TaskEventCreateProjectResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -236,17 +236,23 @@ def createProject():
         "project_name": request.headers.get("project_name"),
         "description": request.headers.get("user_uuid")
     }
-
     response = [
         {
-            "task_event": {
-                'task_event_id': 1,
-                'status': 'success',
-                'type': 'create'
-            }
-        }, {
-        'project': payload
-    }]
+            "success": boolean(1),
+            "message": "List project success",
+            "error_code": 0,
+            "data": [
+                    {
+                        "task_event": {
+                            'task_event_id': 1,
+                            'status': 'success',
+                            'type': 'create'
+                        }
+                    }, {
+                    'project': payload
+                }]
+        }
+    ]
 
     return jsonify(response)
 
@@ -263,6 +269,7 @@ def getProject(project_uuid):
             -   name: project_uuid
                 in: path
                 description: UUID of project
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
                 required: true
                 schema:
                     type: string
@@ -304,14 +311,20 @@ def getProject(project_uuid):
                     application/json:
                         schema: DefaultError
     """
-
-    response = [{
-        'uuid': project_uuid,
-        'origin_name': 'project1',
-        'alias_name': "day la project 1",
-        'description': "day la description project 1",
-        'role': "owner"
-    }]
+    response = [
+        {
+            "success": boolean(1),
+            "message": "List project success",
+            "error_code": 0,
+            "data": {
+                'uuid': project_uuid,
+                'origin_name': 'project1',
+                'alias_name': "day la project 1",
+                'description': "day la description project 1",
+                'role': "owner"
+            }
+        }
+    ]
 
     return jsonify(response)
 
@@ -352,7 +365,7 @@ def getUserProject(project_uuid):
                 in: query
                 schema:
                     type: string
-                enum: [asc, desc]
+                    enum: [asc, desc]
                 description: >
                     Sort order:
                         * `user_name:asc` - Ascending, from A to Z
@@ -423,14 +436,17 @@ def getUserProject(project_uuid):
             "success": boolean(1),
             "message": "List user in project %s success",
             "error_code": 0,
-            "project": {
-                        'uuid': '1',
-                        'origin_name': 'project1',
-                        'alias_name': "day la project 1",
-                        'description': "day la description project 1",
-                        'role': "owner"
-                    },
-            "data": [{
+            "data": [
+                {"project": {
+                            'uuid': '1',
+                            'origin_name': 'project1',
+                            'alias_name': "day la project 1",
+                            'description': "day la description project 1",
+                            'role': "owner"
+                        }
+                },
+                {"users": [
+                    {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
                         'user_email': 'test@gmail.com',
                         'description': "user full permission",
@@ -444,14 +460,17 @@ def getUserProject(project_uuid):
                         'role': "admin",
                         'is_active': boolean(1),
                         'created_at': '2022-04-21T02:30:28.911Z'
-                    },{
+                    }, {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
                         'user_email': 'test@gmail.com',
                         'description': "day la role custom",
                         'role': "dev",
                         'is_active': boolean(1),
                         'created_at': '2022-04-21T02:30:28.911Z'
-                    }],
+                    }
+                    ]
+                }
+            ],
             "metadata": {
                 "total": 100,
                 "current_page": 1,
@@ -498,7 +517,7 @@ def updateProject(project_uuid):
                 description: info project
                 content:
                     application/json:
-                        schema: TaskEventUpdateProject
+                        schema: TaskEventUpdateProjectResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -538,18 +557,29 @@ def updateProject(project_uuid):
         'project_name': 'project1',
         'description': "day la description project 1"
     }
-    response = [{
-        "task_event": {
-            'task_event_id': 2,
-            'status': 'success',
-            'type': 'update'
+
+
+    response = [
+        {
+            "success": boolean(1),
+            "message": "Update project success",
+            "error_code": 0,
+            "data": [
+                {
+                    "task_event": {
+                        'task_event_id': 2,
+                        'status': 'success',
+                        'type': 'update'
+                    }
+                }, {
+                    "project": {
+                            "before_values": before_values,
+                            "after_values": payload
+                        }
+                    }
+            ]
         }
-    }, {
-        "project": {
-            "before_values": before_values,
-            "after_values": payload
-        }
-    }]
+    ]
 
     return jsonify(response)
 
@@ -575,7 +605,7 @@ def deleteProject(project_uuid):
                 description: delete project
                 content:
                     application/json:
-                        schema: TaskEventDeleteProject
+                        schema: TaskEventDeleteProjectResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -615,14 +645,21 @@ def deleteProject(project_uuid):
 
     response = [
         {
-            "task_event": {
-                'task_event_id': 3,
-                'status': 'success',
-                'type': 'delete'
-            }
-        }, {
-            "project": project
-            }
+            "success": boolean(1),
+            "message": "Delete project success",
+            "error_code": 0,
+            "data": [
+                {
+                    "task_event": {
+                        'task_event_id': 9,
+                        'status': 'success',
+                        'type': 'delete'
+                    }
+                }, {
+                    "project": project
+                    }
+            ]
+        }
     ]
 
     return jsonify(response)
