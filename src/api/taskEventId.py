@@ -72,7 +72,7 @@ def listTaskEvent(project_uuid):
             response = [
                 {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
                     "error_code": 0,
                     "data": [{
                             "task_event_id": 1,
@@ -98,7 +98,7 @@ def listTaskEvent(project_uuid):
             response = [
                 {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
                     "error_code": 0,
                     "data": [{
                             "task_event_id": 1,
@@ -116,7 +116,7 @@ def listTaskEvent(project_uuid):
             response = [
                 {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
                     "error_code": 0,
                     "data": [{
                             "task_event_id": 2,
@@ -130,7 +130,7 @@ def listTaskEvent(project_uuid):
             response = [
                 {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
                     "error_code": 0,
                     "data": [{
                             "task_event_id": 9,
@@ -200,7 +200,7 @@ def getTaskEvent(task_event_id):
     if int(task_event_id) == 1:
         response = {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": "Get task event success",
                     "error_code": 0,
                     "data": {
                         'task_event_id': int(task_event_id),
@@ -211,7 +211,7 @@ def getTaskEvent(task_event_id):
     elif int(task_event_id) == 2:
         response = {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": "Get task event success",
                     "error_code": 0,
                     "data": {
                         'task_event_id': int(task_event_id),
@@ -222,7 +222,7 @@ def getTaskEvent(task_event_id):
     elif int(task_event_id) == 3:
         response = {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": "Get task event success",
                     "error_code": 0,
                     "data": {
                         'task_event_id': int(task_event_id),
@@ -233,7 +233,7 @@ def getTaskEvent(task_event_id):
     elif int(task_event_id) == 9:
         response = {
                     "success": boolean(1),
-                    "message": "Update project success",
+                    "message": "Get task event success",
                     "error_code": 0,
                     "data": {
                         'task_event_id': int(task_event_id),

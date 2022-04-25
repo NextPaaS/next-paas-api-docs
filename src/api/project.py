@@ -239,7 +239,7 @@ def createProject():
     response = [
         {
             "success": boolean(1),
-            "message": "List project success",
+            "message": "Create project success",
             "error_code": 0,
             "data": [
                     {
@@ -314,7 +314,7 @@ def getProject(project_uuid):
     response = [
         {
             "success": boolean(1),
-            "message": "List project success",
+            "message": "Get info project %s success",
             "error_code": 0,
             "data": {
                 'uuid': project_uuid,
@@ -562,7 +562,7 @@ def updateProject(project_uuid):
     response = [
         {
             "success": boolean(1),
-            "message": "Update project success",
+            "message": "Update project %s success",
             "error_code": 0,
             "data": [
                 {
@@ -646,7 +646,7 @@ def deleteProject(project_uuid):
     response = [
         {
             "success": boolean(1),
-            "message": "Delete project success",
+            "message": "Delete project %s success",
             "error_code": 0,
             "data": [
                 {
