@@ -1,27 +1,27 @@
 
 variables:
-  REGISTRY: hub.paas.vn
+  #REGISTRY: hub.paas.vn
   ##HUB_USERNAME: gitlab-runner
   HUB_NAMESPACE: openstack
   
-  HN_VALUES_FILE: values_stg2_hn.yaml
-  VALUES_FILE: values_stg2_hn.yaml
-  IMAGE: iam-document-v2
+  #HN_VALUES_FILE: values_stg2_hn.yaml
+  #VALUES_FILE: values_stg2_hn.yaml
+  #IMAGE: iam-document-v2
 
 
 include:
   - project: 'devops-team/gitops/ci-template'
     file:  'hn-backend-ci-template.yml'
 
-deploy_staging_hn:
-  stage: deploy
-  script:
-    - export HN_VALUES_FILE="values_stg2_hn.yaml"
-    - export VALUES_FILE="values_stg2_hn.yaml"
-    - export IMAGE="iam-document-v2"
-    - DeployV2
-  tags:
-    - devops-runner-prod
-  only:
-    - staging
+#deploy_staging_hn:
+#  stage: deploy
+#  script:
+#    - export HN_VALUES_FILE="values_stg2_hn.yaml"
+#    - export VALUES_FILE="values_stg2_hn.yaml"
+#    - export IMAGE="iam-document-v2"
+#    - DeployV2
+#  tags:
+#    - devops-runner-prod
+#  only:
+#    - staging
 
