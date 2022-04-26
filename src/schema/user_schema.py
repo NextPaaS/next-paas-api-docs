@@ -9,7 +9,8 @@ class UserOfProject(Schema):
     description = fields.Str()
     user_role = fields.Str()
     is_active = fields.Boolean()
-    created_date = fields.DateTime()
+    created_at = fields.DateTime()
+    updaed_at = fields.DateTime()
 
 class ListUser(Schema):
     success = fields.Boolean()
