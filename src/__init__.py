@@ -7,7 +7,6 @@ from apispec.utils import validate_spec
 from apispec.ext.marshmallow import MarshmallowPlugin
 from apispec_webframeworks.flask import FlaskPlugin
 from flask import Flask, jsonify, render_template, send_from_directory
-from flask_cors import CORS
 from src.api.taskEventId import listTaskEvent
 
 
@@ -15,12 +14,12 @@ env = os.getenv("ENV", "development")
 
 def create_app():
     app = Flask(__name__, template_folder='../templates', static_folder='../static')
-    CORS(app)
     app.config['JSON_SORT_KEYS'] = False
 
     OPENAPI_SPEC = """
         servers:
         - url: http://127.0.0.1:9997/
+        - url: https://staging.bizflycloud.vn/api/iam/v2
         - url: https://staging2.bizflycloud.vn/api/iam/v2
         - url: https://manage.bizflycloud.vn/api/iam/v2
         - url: https://dev.bizflycloud.vn/api/iam/v2
