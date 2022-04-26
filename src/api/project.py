@@ -139,6 +139,7 @@ def listProject():
                         'alias_name': "day la project 1",
                         'description': "day la description project 1",
                         'role': "owner",
+                        'is_active': boolean(1),
                         'created_at': '2022-04-26T02:51:40.905Z',
                         'updated_at': ''
                     }, {
@@ -147,6 +148,7 @@ def listProject():
                         'alias_name': "cai nay to lam",
                         'description': "",
                         'role': "admin",
+                        'is_active': boolean(0),
                         'created_at': '2022-04-26T02:51:40.905Z',
                         'updated_at': '2022-04-26T02:51:40.905Z'
                 }],
@@ -239,6 +241,7 @@ def createProject():
         "user_email": request.headers.get("user_email"),
         "project_name": request.headers.get("project_name"),
         "description": request.headers.get("user_uuid"),
+        'is_active': boolean(1),
         "created_at": "2022-04-26T02:51:40.905Z",
         "updated_at": ""
     }
@@ -328,6 +331,7 @@ def getProject(project_uuid):
                 'alias_name': "day la project 1",
                 'description': "day la description project 1",
                 'role': "owner",
+                'is_active': boolean(1),
                 'created_at': '2022-04-26T02:51:40.905Z',
                 'updated_at': '2022-04-26T02:51:40.905Z'
             }
@@ -451,6 +455,7 @@ def getUserProject(project_uuid):
                             'alias_name': "day la project 1",
                             'description': "day la description project 1",
                             'role': "owner",
+                            'is_active': boolean(1),
                             'created_at': '2022-04-26T02:51:40.905Z',
                             'updated_at': '2022-04-26T02:51:40.905Z'
                         }

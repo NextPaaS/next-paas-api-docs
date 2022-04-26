@@ -8,6 +8,7 @@ class ProjectSchema(Schema):
     alias_name = fields.Str()
     description = fields.Str()
     role = fields.Str()
+    is_actice = fields.Boolean()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
 
