@@ -8,14 +8,14 @@ from apispec.ext.marshmallow import MarshmallowPlugin
 from apispec_webframeworks.flask import FlaskPlugin
 from flask import Flask, jsonify, render_template, send_from_directory
 from src.api.taskEventId import listTaskEvent
-
+from flask_cors import CORS
 
 env = os.getenv("ENV", "development")
 
 def create_app():
     app = Flask(__name__, template_folder='../templates', static_folder='../static')
     app.config['JSON_SORT_KEYS'] = False
-
+    CORS(app)
     OPENAPI_SPEC = """
         servers:
         - url: http://127.0.0.1:9997/
