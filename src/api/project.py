@@ -35,13 +35,12 @@ def listProject():
                 schema:
                     type: string
                     format: uuid
-            -   name: role
+            -   name: sort_field
                 in: query
                 schema:
                     type: string
-                    enum: [all, Owner, Member, Maintainer, Reader]
-                required: true
-                description: filter based on role 
+                    enum: [project_name, role, created_at]
+                description: sort field 
             -   name: project_name
                 in: query
                 schema:
@@ -66,6 +65,8 @@ def listProject():
                     Sort order:
                         * `project_name:asc` - Ascending, from A to Z
                         * `project_name:desc` - Descending, from Z to A
+                        * `role:asc` - Ascending, from A to Z
+                        * `role:desc` - Descending, from Z to A
                         * `created_at:asc` - Ascending, from A to Z
                         * `created_at:desc` - Descending, from Z to A
             -   name: limit
@@ -373,6 +374,12 @@ def getUserProject(project_uuid):
                     type: string
                     format: uuid
                 description: filter based on group_name 
+            -   name: sort_field
+                in: query
+                schema:
+                    type: string
+                    enum: [email, role, created_at]
+                description: sort field 
             -   name: sort
                 in: query
                 schema:
@@ -380,8 +387,10 @@ def getUserProject(project_uuid):
                     enum: [asc, desc]
                 description: >
                     Sort order:
-                        * `user_name:asc` - Ascending, from A to Z
-                        * `user_name:desc` - Descending, from Z to A
+                        * `email:asc` - Ascending, from A to Z
+                        * `email:desc` - Descending, from Z to A
+                        * `role:asc` - Ascending, from A to Z
+                        * `role:desc` - Descending, from Z to A
                         * `created_at:asc` - Ascending, from A to Z
                         * `created_at:desc` - Descending, from Z to A
             -   name: limit
