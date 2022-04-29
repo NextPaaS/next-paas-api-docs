@@ -20,6 +20,12 @@ def listProject():
         tags:
             - Projects
         parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                required: true
+                schema:
+                    type: string
             -   name: all
                 in: query
                 schema:
@@ -176,29 +182,17 @@ def createProject():
             - Projects
         description: create project
         parameters:
-            -   name: userUuid
+            -   name: cookie
                 in: header
-                description: UUID of user
+                description: cookie for authentication
+                required: true
                 schema:
                     type: string
-                    format: uuid
-            -   name: userEmail
-                in: header
-                description: email of user
-                required: true
-                schema:
-                    type: string 
-            -   name: projectName
-                in: header
-                description: project name user want create
-                required: true
-                schema:
-                    type: string 
-            -   name: description
-                in: header
-                description: description of project
-                schema:
-                    type: string 
+        requestBody:
+            content:
+                application/json:
+                    schema: PayloadCreateProject
+
         responses:
             200:
                 description: Task event info
@@ -237,15 +231,7 @@ def createProject():
                         schema: DefaultError
     """
 
-    payload = {
-        "user_uuid": request.headers.get("userUuid"),
-        "user_email": request.headers.get("userEmail"),
-        "project_name": request.headers.get("projectName"),
-        "description": request.headers.get("description"),
-        'is_active': boolean(1),
-        "created_at": "2022-04-26T02:51:40.905Z",
-        "updated_at": ""
-    }
+    payload = request.get_json()
     response = [
         {
             "success": boolean(1),
@@ -276,6 +262,12 @@ def getProject(project_uuid):
             - Projects
         description: Get info project
         parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                required: true
+                schema:
+                    type: string
             -   name: projectUuid
                 in: path
                 description: UUID of project
@@ -351,6 +343,12 @@ def getUserProject(project_uuid):
             - Projects
         description: Get user of project
         parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                required: true
+                schema:
+                    type: string
             -   name: projectUuid
                 in: path
                 description: UUID of project
@@ -521,6 +519,12 @@ def updateProject(project_uuid):
             - Projects
         description: Get info project
         parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                required: true
+                schema:
+                    type: string
             -   name: projectUuid
                 in: path
                 description: UUID of project
@@ -528,17 +532,10 @@ def updateProject(project_uuid):
                 schema:
                     type: string
                     format: uuid
-            -   name: projectName
-                in: header
-                description: project name user want create
-                required: true
-                schema:
-                    type: string
-            -   name: description
-                in: header
-                description: description of project
-                schema:
-                    type: string 
+        requestBody:
+            content:
+                application/json:
+                    schema: ValuesProject
         responses:
             200:
                 description: info project
@@ -576,10 +573,7 @@ def updateProject(project_uuid):
                     application/json:
                         schema: DefaultError
     """
-    payload = {
-        "project_name": request.headers.get("projectName"),
-        "description": request.headers.get("description")
-    }
+    payload = request.get_json()
     before_values = {
         'project_name': 'project1',
         'description': "day la description project 1"
@@ -620,6 +614,12 @@ def deleteProject(project_uuid):
             - Projects
         description: Delete project
         parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                required: true
+                schema:
+                    type: string
             -   name: projectUuid
                 in: path
                 description: UUID of project
