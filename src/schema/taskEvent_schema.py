@@ -22,13 +22,13 @@ class ListTaskEventResponse(Schema):
 
 
 class PayloadCreateProject(Schema):
-    user_uuid = fields.Str()
-    user_email = fields.Str()
+    user_uuid = fields.Str(metadata={"format": "uuid", "required": "true"})
+    user_email = fields.Str(metadata={"format": "email"})
     project_name = fields.Str()
     description = fields.Str()
 
 class ValuesProject(Schema):
-    project_name = fields.Str()
+    project_name = fields.Str(metadata={"required": "true"})
     description = fields.Str()
 
 class TaskEventCreateProject(Schema):
