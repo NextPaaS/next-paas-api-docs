@@ -238,9 +238,9 @@ def createProject():
     """
 
     payload = {
-        "user_uuid": request.headers.get("user_uuid"),
-        "user_email": request.headers.get("user_email"),
-        "project_name": request.headers.get("project_name"),
+        "user_uuid": request.headers.get("userUuid"),
+        "user_email": request.headers.get("userUmail"),
+        "project_name": request.headers.get("projectName"),
         "description": request.headers.get("description"),
         'is_active': boolean(1),
         "created_at": "2022-04-26T02:51:40.905Z",
@@ -577,7 +577,7 @@ def updateProject(project_uuid):
                         schema: DefaultError
     """
     payload = {
-        "project_name": request.headers.get("project_name"),
+        "project_name": request.headers.get("projectName"),
         "description": request.headers.get("description")
     }
     before_values = {
