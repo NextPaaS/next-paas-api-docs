@@ -16,7 +16,7 @@ def listTaskEvent(project_uuid):
             - Task Event (for websocket)
         description: List task event of project
         parameters:
-            -   name: project_uuid
+            -   name: projecUuid
                 in: path
                 description: uuid of project
                 required: true
@@ -153,7 +153,7 @@ def getTaskEvent(task_event_id):
             - Task Event (for websocket)
         description: Get result task event info
         parameters:
-            -   name: task_event_id
+            -   name: taskEventId
                 in: path
                 description: ID of task event
                 required: true
