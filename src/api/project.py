@@ -239,7 +239,7 @@ def createProject():
 
     payload = {
         "user_uuid": request.headers.get("userUuid"),
-        "user_email": request.headers.get("userUmail"),
+        "user_email": request.headers.get("userEmail"),
         "project_name": request.headers.get("projectName"),
         "description": request.headers.get("description"),
         'is_active': boolean(1),
