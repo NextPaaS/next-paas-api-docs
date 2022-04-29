@@ -1,4 +1,5 @@
 import logging
+import re
 import sys
 from src.api import bp
 from src.schema.error_schema import *
@@ -20,7 +21,7 @@ def listProject():
         tags:
             - Projects
         parameters:
-            -   name: cookie
+            -   name: cookies
                 in: header
                 description: cookie for authentication
                 required: true
@@ -135,6 +136,7 @@ def listProject():
                         schema: DefaultError
     """
 
+    print(request.headers.get("cookies"))
     response = [
         {
             "success": boolean(1),
@@ -182,7 +184,7 @@ def createProject():
             - Projects
         description: create project
         parameters:
-            -   name: cookie
+            -   name: cookies
                 in: header
                 description: cookie for authentication
                 required: true
@@ -232,6 +234,7 @@ def createProject():
     """
 
     payload = request.get_json()
+    print(request.headers.get("cookies"))
     response = [
         {
             "success": boolean(1),
@@ -262,7 +265,7 @@ def getProject(project_uuid):
             - Projects
         description: Get info project
         parameters:
-            -   name: cookie
+            -   name: cookies
                 in: header
                 description: cookie for authentication
                 required: true
@@ -343,7 +346,7 @@ def getUserProject(project_uuid):
             - Projects
         description: Get user of project
         parameters:
-            -   name: cookie
+            -   name: cookies
                 in: header
                 description: cookie for authentication
                 required: true
@@ -450,6 +453,7 @@ def getUserProject(project_uuid):
                         schema: DefaultError
     """
 
+    print(request.headers.get("cookies"))
     response = [
         {
             "success": boolean(1),
@@ -519,7 +523,7 @@ def updateProject(project_uuid):
             - Projects
         description: Get info project
         parameters:
-            -   name: cookie
+            -   name: cookies
                 in: header
                 description: cookie for authentication
                 required: true
@@ -573,6 +577,7 @@ def updateProject(project_uuid):
                     application/json:
                         schema: DefaultError
     """
+    print(request.headers.get("cookies"))
     payload = request.get_json()
     before_values = {
         'project_name': 'project1',
@@ -614,7 +619,7 @@ def deleteProject(project_uuid):
             - Projects
         description: Delete project
         parameters:
-            -   name: cookie
+            -   name: cookies
                 in: header
                 description: cookie for authentication
                 required: true
@@ -665,6 +670,7 @@ def deleteProject(project_uuid):
                         schema: DefaultError
     """
 
+    print(request.headers.get("cookies"))
     project = {
         'project_name': 'project1',
         'description': "day la description project 1"
