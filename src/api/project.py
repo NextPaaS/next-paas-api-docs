@@ -241,7 +241,7 @@ def createProject():
         "user_uuid": request.headers.get("user_uuid"),
         "user_email": request.headers.get("user_email"),
         "project_name": request.headers.get("project_name"),
-        "description": request.headers.get("user_uuid"),
+        "description": request.headers.get("description"),
         'is_active': boolean(1),
         "created_at": "2022-04-26T02:51:40.905Z",
         "updated_at": ""
