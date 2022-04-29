@@ -30,28 +30,28 @@ def listProject():
                 schema:
                     type: string
                 description: filter based on email 
-            -   name: user_uuid
+            -   name: userUuid
                 in: query
                 schema:
                     type: string
                     format: uuid
-            -   name: sort_field
+            -   name: sortField
                 in: query
                 schema:
                     type: string
-                    enum: [project_name, role, created_at]
+                    enum: [projectName, role, createdAt]
                 description: sort field 
-            -   name: project_name
+            -   name: projectName
                 in: query
                 schema:
                     type: string
                 description: filter based on project name 
-            -   name: project_uuid
+            -   name: projectUuid
                 in: query
                 schema:
                     type: string
                 description: filter based on project id
-            -   name: project_alias_name
+            -   name: projectAliasName
                 in: query
                 schema:
                     type: string
@@ -63,12 +63,12 @@ def listProject():
                     enum: [asc, desc]
                 description: >
                     Sort order:
-                        * `project_name:asc` - Ascending, from A to Z
-                        * `project_name:desc` - Descending, from Z to A
+                        * `projectName:asc` - Ascending, from A to Z
+                        * `projectName:desc` - Descending, from Z to A
                         * `role:asc` - Ascending, from A to Z
                         * `role:desc` - Descending, from Z to A
-                        * `created_at:asc` - Ascending, from A to Z
-                        * `created_at:desc` - Descending, from Z to A
+                        * `createdAt:asc` - Ascending, from A to Z
+                        * `createdAt:desc` - Descending, from Z to A
             -   name: limit
                 in: query
                 description: How many items to return at one time (max 100)
@@ -176,19 +176,19 @@ def createProject():
             - Projects
         description: create project
         parameters:
-            -   name: user_uuid
+            -   name: userUuid
                 in: header
                 description: UUID of user
                 schema:
                     type: string
                     format: uuid
-            -   name: user_email
+            -   name: userEmail
                 in: header
                 description: email of user
                 required: true
                 schema:
                     type: string 
-            -   name: project_name
+            -   name: projectName
                 in: header
                 description: project name user want create
                 required: true
@@ -276,7 +276,7 @@ def getProject(project_uuid):
             - Projects
         description: Get info project
         parameters:
-            -   name: project_uuid
+            -   name: projectUuid
                 in: path
                 description: UUID of project
                 example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
@@ -351,7 +351,7 @@ def getUserProject(project_uuid):
             - Projects
         description: Get user of project
         parameters:
-            -   name: project_uuid
+            -   name: projectUuid
                 in: path
                 description: UUID of project
                 required: true
@@ -368,13 +368,13 @@ def getUserProject(project_uuid):
                 schema:
                     type: string
                 description: filter based on username 
-            -   name: group_name
+            -   name: groupName
                 in: query
                 schema:
                     type: string
                     format: uuid
-                description: filter based on group_name 
-            -   name: sort_field
+                description: filter based on groupName 
+            -   name: sortField
                 in: query
                 schema:
                     type: string
@@ -521,14 +521,14 @@ def updateProject(project_uuid):
             - Projects
         description: Get info project
         parameters:
-            -   name: project_uuid
+            -   name: projectUuid
                 in: path
                 description: UUID of project
                 required: true
                 schema:
                     type: string
                     format: uuid
-            -   name: project_name
+            -   name: projectName
                 in: header
                 description: project name user want create
                 required: true
@@ -620,7 +620,7 @@ def deleteProject(project_uuid):
             - Projects
         description: Delete project
         parameters:
-            -   name: project_uuid
+            -   name: projectUuid
                 in: path
                 description: UUID of project
                 required: true
