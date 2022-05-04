@@ -22,7 +22,7 @@ def create_app():
         - url: https://staging.bizflycloud.vn/api/iam/v2
         - url: https://staging2.bizflycloud.vn/api/iam/v2
         - url: https://manage.bizflycloud.vn/api/iam/v2
-        - url: https://dev.bizflycloud.vn/api/iam/v2
+        - url: https://dev-iam.bizflycloud.vn/api/iam/v2
     """
 
     settings = yaml.safe_load(OPENAPI_SPEC)
