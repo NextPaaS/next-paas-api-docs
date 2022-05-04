@@ -15,7 +15,29 @@ env = os.getenv("ENV", "development")
 def create_app():
     app = Flask(__name__, template_folder='../templates', static_folder='../static')
     app.config['JSON_SORT_KEYS'] = False
-    CORS(app)
+    CORS(app, origins=[
+            "http://*.bizflycloud.vn",
+			"http://*.vccloud.vn",
+			"https://*.bizflycloud.vn",
+			"https://*.vccloud.vn",
+			"http://*.bizflycloud.vn:8081",
+			"http://*.bizflycloud.vn:8080",
+			"http://local.bizflycloud.vn:8080",
+			"http://local.bizflycloud.vn:8000",
+			"http://hn-local.bizflycloud.vn",
+			"http://hcm-local.bizflycloud.vn",
+			"http://hn-local.bizflycloud.vn:8000",
+			"http://hn-local.bizflycloud.vn:8080",
+			"http://hcm-local.bizflycloud.vn:8000",
+			"http://hcm-local.bizflycloud.vn:8080",
+			"http://hn-local.manage.bizflycloud.vn",
+			"http://hcm-local.manage.bizflycloud.vn",
+			"http://hn-local.manage.bizflycloud.vn:8080",
+			"http://hcm-local.manage.bizflycloud.vn:8080",
+        ], expose_headers=["Content-Length"], 
+        supports_credentials=True
+    )
+
     OPENAPI_SPEC = """
         servers:
         - url: http://127.0.0.1:9997/
