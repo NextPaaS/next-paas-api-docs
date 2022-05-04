@@ -12,7 +12,7 @@ from flask import jsonify, request
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
-@bp.route('/projects')
+@bp.route('/projects', methods=["GET"])
 def listProject():
     """Get List of project
     ---
@@ -255,7 +255,7 @@ def createProject():
 
     return jsonify(response)
 
-@bp.route('/project/<project_uuid>')
+@bp.route('/project/<uuid:project_uuid>', methods=["GET"])
 def getProject(project_uuid):
     """Get info project
     ---
@@ -336,7 +336,7 @@ def getProject(project_uuid):
 
     return jsonify(response)
 
-@bp.route('/project/<project_uuid>/users')
+@bp.route('/project/<uuid:project_uuid>/users', methods=["GET"])
 def getUserProject(project_uuid):
     """Get user of project
     ---
@@ -453,10 +453,9 @@ def getUserProject(project_uuid):
                         schema: DefaultError
     """
 
-    print(request.headers.get("cookies"))
     response = [
         {
-            "success": boolean(1),
+            "success": True,
             "message": "List user in project %s success",
             "error_code": 0,
             "data": [
@@ -466,7 +465,7 @@ def getUserProject(project_uuid):
                             'alias_name': "day la project 1",
                             'description': "day la description project 1",
                             'role': "owner",
-                            'is_active': boolean(1),
+                            'is_active': True,
                             'created_at': '2022-04-26T02:51:40.905Z',
                             'updated_at': '2022-04-26T02:51:40.905Z'
                         }
@@ -477,7 +476,7 @@ def getUserProject(project_uuid):
                         'user_email': 'test@gmail.com',
                         'description': "user full permission",
                         'role': "owner",
-                        'is_active': boolean(1),
+                        'is_active': True,
                         'created_at': '2022-04-21T02:30:28.911Z',
                         'updated_at': '2022-04-26T02:51:40.905Z'
                     }, {
@@ -485,15 +484,23 @@ def getUserProject(project_uuid):
                         'user_email': 'test1@gmail.com',
                         'description': "day la description project 1",
                         'role': "admin",
-                        'is_active': boolean(1),
+                        'is_active': True,
                         'created_at': '2022-04-21T02:30:28.911Z',
                         'updated_at': ''
                     }, {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                        'user_email': 'test@gmail.com',
+                        'user_email': 'test2@gmail.com',
                         'description': "day la role custom",
                         'role': "dev",
-                        'is_active': boolean(1),
+                        'is_active': False,
+                        'created_at': '2022-04-21T02:30:28.911Z',
+                        'updated_at': '2022-04-26T02:51:40.905Z'
+                    }, {
+                        'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                        'user_email': 'test3@gmail.com',
+                        'description': "day la role custom",
+                        'role': "reader",
+                        'is_active': False,
                         'created_at': '2022-04-21T02:30:28.911Z',
                         'updated_at': '2022-04-26T02:51:40.905Z'
                     }
@@ -503,7 +510,7 @@ def getUserProject(project_uuid):
             "metadata": {
                 "total": 100,
                 "current_page": 1,
-                "has_next": boolean(0),
+                "has_next": False,
                 "has_previous": 1,
                 "previous_page": 1,
                 "next_page": 1
@@ -513,7 +520,7 @@ def getUserProject(project_uuid):
 
     return jsonify(response)
 
-@bp.route('/project/update/<project_uuid>', methods=['PUT'])
+@bp.route('/project/update/<uuid:project_uuid>', methods=['PUT'])
 def updateProject(project_uuid):
     """Get info project
     ---
@@ -609,7 +616,7 @@ def updateProject(project_uuid):
 
     return jsonify(response)
 
-@bp.route('/project/delete/<project_uuid>', methods=['DELETE'])
+@bp.route('/project/delete/<uuid:project_uuid>', methods=['DELETE'])
 def deleteProject(project_uuid):
     """Delete project
     ---
