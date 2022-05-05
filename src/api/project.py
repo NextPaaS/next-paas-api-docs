@@ -508,7 +508,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -571,7 +571,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -635,7 +635,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -699,7 +699,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -762,7 +762,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -826,7 +826,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -890,7 +890,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -953,7 +953,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1017,7 +1017,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1081,7 +1081,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1144,7 +1144,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1208,7 +1208,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1274,7 +1274,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1337,7 +1337,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1401,7 +1401,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1465,7 +1465,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1528,7 +1528,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1592,7 +1592,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1656,7 +1656,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1719,7 +1719,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1783,7 +1783,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1847,7 +1847,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1910,7 +1910,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
@@ -1974,7 +1974,7 @@ def getUserProject(project_uuid):
                                 }, 
                             "metadata": {
                                 "total": 4,
-                                "current_page": page,
+                                "current_page": int(page),
                                 "has_next": False,
                                 "has_previous": 1,
                                 "previous_page": 1,
