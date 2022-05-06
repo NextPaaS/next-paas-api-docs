@@ -580,7 +580,7 @@ def getUserProject(project_uuid):
                         }
                     ]
 
-            if sortField == "role":
+            elif sortField == "role":
                 if sort == 'desc':
                     response = [
                         {
@@ -655,7 +655,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -707,7 +706,7 @@ def getUserProject(project_uuid):
                             }
                         }
                     ]
-            if sortField == "created_at":
+            elif sortField == "created_at":
                 if sort == 'desc':
                     response = [
                         {
@@ -782,7 +781,69 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
+                                            'is_active': True,
+                                            'created_at': '2022-04-26T02:51:40.905Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                    } ,
+                                    "users": [
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
+                                            'user_email': f'{username}test@gmail.com',
+                                            'description': "day la description project 1",
+                                            'role': "admin",
+                                            'is_active': True,
+                                            'created_at': '2022-04-21T02:30:28.911Z',
+                                            'updated_at': ''
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
+                                            'user_email': f'{username}test1@gmail.com',
+                                            'description': "user full permission",
                                             'role': "owner",
+                                            'is_active': True,
+                                            'created_at': '2022-04-22T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, 
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': f'{username}test2@gmail.com',
+                                            'description': "day la role reader",
+                                            'role': "reader",
+                                            'is_active': False,
+                                            'created_at': '2022-04-23T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': f'{username}test3@gmail.com',
+                                            'description': "day la role custom",
+                                            'role': "dev",
+                                            'is_active': False,
+                                            'created_at': '2022-04-24T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }
+                                    ]
+                                }, 
+                            "metadata": {
+                                "total": 4,
+                                "current_page": int(page),
+                                "has_next": False,
+                                "has_previous": 1,
+                                "previous_page": 1,
+                                "next_page": int(page) + 1
+                            }
+                        }
+                    ]
+            else:
+                response = [
+                        {
+                            "success": True,
+                            "message": "List user in project %s success" % "project1",
+                            "error_code": 0,
+                            "data": {
+                                    "project": {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                                            'origin_name': 'project1',
+                                            'alias_name': "day la project 1",
+                                            'description': "day la description project 1",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -962,7 +1023,7 @@ def getUserProject(project_uuid):
                         }
                     ]
 
-            if sortField == "role":
+            elif sortField == "role":
                 if sort == 'desc':
                     response = [
                         {
@@ -1037,7 +1098,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -1089,7 +1149,7 @@ def getUserProject(project_uuid):
                             }
                         }
                     ]
-            if sortField == "created_at":
+            elif sortField == "created_at":
                 if sort == 'desc':
                     response = [
                         {
@@ -1164,7 +1224,69 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
+                                            'is_active': True,
+                                            'created_at': '2022-04-26T02:51:40.905Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                    } ,
+                                    "users": [
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
+                                            'user_email': 'test@gmail.com',
+                                            'description': "day la description project 1",
+                                            'role': "admin",
+                                            'is_active': True,
+                                            'created_at': '2022-04-21T02:30:28.911Z',
+                                            'updated_at': ''
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
+                                            'user_email': 'test1@gmail.com',
+                                            'description': "user full permission",
                                             'role': "owner",
+                                            'is_active': True,
+                                            'created_at': '2022-04-22T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, 
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': 'test2@gmail.com',
+                                            'description': "day la role reader",
+                                            'role': "reader",
+                                            'is_active': False,
+                                            'created_at': '2022-04-23T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': 'test3@gmail.com',
+                                            'description': "day la role custom",
+                                            'role': "dev",
+                                            'is_active': False,
+                                            'created_at': '2022-04-24T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }
+                                    ]
+                                }, 
+                            "metadata": {
+                                "total": 4,
+                                "current_page": int(page),
+                                "has_next": False,
+                                "has_previous": 1,
+                                "previous_page": 1,
+                                "next_page": int(page) + 1
+                            }
+                        }
+                    ]
+            else:
+                response = [
+                        {
+                            "success": True,
+                            "message": "List user in project %s success" % "project1",
+                            "error_code": 0,
+                            "data": {
+                                    "project": {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                                            'origin_name': 'project1',
+                                            'alias_name': "day la project 1",
+                                            'description': "day la description project 1",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -1346,7 +1468,7 @@ def getUserProject(project_uuid):
                         }
                     ]
 
-            if sortField == "role":
+            elif sortField == "role":
                 if sort == 'desc':
                     response = [
                         {
@@ -1421,7 +1543,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -1473,7 +1594,7 @@ def getUserProject(project_uuid):
                             }
                         }
                     ]
-            if sortField == "created_at":
+            elif sortField == "created_at":
                 if sort == 'desc':
                     response = [
                         {
@@ -1548,7 +1669,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -1600,6 +1720,70 @@ def getUserProject(project_uuid):
                             }
                         }
                     ]
+            else:
+                response = [
+                        {
+                            "success": True,
+                            "message": "List user in project %s success" % "project1",
+                            "error_code": 0,
+                            "data": {
+                                    "project": {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                                            'origin_name': 'project1',
+                                            'alias_name': "day la project 1",
+                                            'description': "day la description project 1",
+                                            'is_active': True,
+                                            'created_at': '2022-04-26T02:51:40.905Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                    } ,
+                                    "users": [
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
+                                            'user_email': f'{username}test@gmail.com',
+                                            'description': "day la description project 1",
+                                            'role': "admin",
+                                            'is_active': True,
+                                            'created_at': '2022-04-21T02:30:28.911Z',
+                                            'updated_at': ''
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
+                                            'user_email': f'{username}test1@gmail.com',
+                                            'description': "user full permission",
+                                            'role': "owner",
+                                            'is_active': True,
+                                            'created_at': '2022-04-22T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, 
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': f'{username}test2@gmail.com',
+                                            'description': "day la role reader",
+                                            'role': "reader",
+                                            'is_active': False,
+                                            'created_at': '2022-04-23T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': f'{username}test3@gmail.com',
+                                            'description': "day la role custom",
+                                            'role': "dev",
+                                            'is_active': False,
+                                            'created_at': '2022-04-24T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }
+                                    ]
+                                }, 
+                            "metadata": {
+                                "total": 4,
+                                "current_page": int(page),
+                                "has_next": False,
+                                "has_previous": 1,
+                                "previous_page": 1,
+                                "next_page": int(page) + 1
+                            }
+                        }
+                    ]
+
         else:
             if sortField == "email":
                 if sort == 'desc':
@@ -1728,7 +1912,7 @@ def getUserProject(project_uuid):
                         }
                     ]
 
-            if sortField == "role":
+            elif sortField == "role":
                 if sort == 'desc':
                     response = [
                         {
@@ -1803,7 +1987,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -1855,7 +2038,7 @@ def getUserProject(project_uuid):
                             }
                         }
                     ]
-            if sortField == "created_at":
+            elif sortField == "created_at":
                 if sort == 'desc':
                     response = [
                         {
@@ -1930,7 +2113,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -1982,6 +2164,70 @@ def getUserProject(project_uuid):
                             }
                         }
                     ]
+            else:
+                response = [
+                        {
+                            "success": True,
+                            "message": "List user in project %s success" % "project1",
+                            "error_code": 0,
+                            "data": {
+                                    "project": {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                                            'origin_name': 'project1',
+                                            'alias_name': "day la project 1",
+                                            'description': "day la description project 1",
+                                            'is_active': True,
+                                            'created_at': '2022-04-26T02:51:40.905Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                    } ,
+                                    "users": [
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
+                                            'user_email': 'test@gmail.com',
+                                            'description': "day la description project 1",
+                                            'role': "admin",
+                                            'is_active': True,
+                                            'created_at': '2022-04-21T02:30:28.911Z',
+                                            'updated_at': ''
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
+                                            'user_email': 'test1@gmail.com',
+                                            'description': "user full permission",
+                                            'role': "owner",
+                                            'is_active': True,
+                                            'created_at': '2022-04-22T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, 
+                                        {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': 'test2@gmail.com',
+                                            'description': "day la role reader",
+                                            'role': "reader",
+                                            'is_active': False,
+                                            'created_at': '2022-04-23T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }, {
+                                            'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
+                                            'user_email': 'test3@gmail.com',
+                                            'description': "day la role custom",
+                                            'role': "dev",
+                                            'is_active': False,
+                                            'created_at': '2022-04-24T02:30:28.911Z',
+                                            'updated_at': '2022-04-26T02:51:40.905Z'
+                                        }
+                                    ]
+                                }, 
+                            "metadata": {
+                                "total": 4,
+                                "current_page": int(page),
+                                "has_next": False,
+                                "has_previous": 1,
+                                "previous_page": 1,
+                                "next_page": int(page) + 1
+                            }
+                        }
+                    ]
+
     if not args:
         page = 1
         response = [
@@ -1995,7 +2241,6 @@ def getUserProject(project_uuid):
                                             'origin_name': 'project1',
                                             'alias_name': "day la project 1",
                                             'description': "day la description project 1",
-                                            'role': "owner",
                                             'is_active': True,
                                             'created_at': '2022-04-26T02:51:40.905Z',
                                             'updated_at': '2022-04-26T02:51:40.905Z'
