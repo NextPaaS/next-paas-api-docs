@@ -1,12 +1,13 @@
+from uuid import UUID
 from src.api import bp
 from src.schema.error_schema import *
 from src.schema.project_schema import *
 from src.schema.taskEvent_schema import *
 from src.schema.user_schema import *
-from flask import jsonify, request
+from flask import jsonify, request, make_response
 
 
-@bp.route('/task-event/project/<project_uuid>')
+@bp.route('/task-event/project/<uuid:project_uuid>')
 def listTaskEvent(project_uuid):
     """List task event of project
     ---
@@ -28,7 +29,7 @@ def listTaskEvent(project_uuid):
                 required: true
                 schema:
                     type: string
-                    enum: [ALL, CREATE, UPDATE, DELETE]
+                    enum: [all, create, update, delete]
         responses:
             200:
                 description: List task event of project %s
@@ -68,82 +69,88 @@ def listTaskEvent(project_uuid):
     """
 
     if project_uuid:
-        if request.args.get('type') == "ALL":
-            response = [
-                {
-                    "success": boolean(1),
-                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
+        if not request.args.get('type') or request.args.get('type').upper() == "ALL":
+            response = {
+                    "success": True,
+                    "message": f"List {(request.args.get('type'))} task event of project {project_uuid} success",
                     "error_code": 0,
-                    "data": [{
-                            "task_event_id": 1,
+                    "data": [
+                        {
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d825",
                             "status": "pending",
                             "type": "create"
                         }, {
-                            "task_event_id": 2,
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d826",
                             "status": "pending",
                             "type": "update"
                         }, {
-                            "task_event_id": 3,
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d827",
                             "status": "success",
                             "type": "create"
                         }, {
-                            "task_event_id": 9,
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d828",
                             "status": "pending",
                             "type": "delete"
                         }
                     ]
                 }
-            ]
-        elif request.args.get('type') == "CREATE":
-            response = [
-                {
-                    "success": boolean(1),
-                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
+        elif request.args.get('type').upper() == "CREATE":
+            response = {
+                    "success": True,
+                    "message": f"List {(request.args.get('type'))} task event of project {project_uuid} success",
                     "error_code": 0,
-                    "data": [{
-                            "task_event_id": 1,
+                    "data": [
+                        {
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d825",
                             "status": "pending",
                             "type": "create"
                         }, {
-                            "task_event_id": 3,
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d827",
                             "status": "success",
                             "type": "create"
                         }
                     ]
                 }
-            ]
-        elif request.args.get('type') == "UPDATE":
-            response = [
-                {
-                    "success": boolean(1),
-                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
+        elif request.args.get('type').upper() == "UPDATE":
+            response = {
+                    "success": True,
+                    "message": f"List {(request.args.get('type'))} task event of project {project_uuid} success",
                     "error_code": 0,
-                    "data": [{
-                            "task_event_id": 2,
+                    "data": [
+                        {
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d826",
                             "status": "pending",
                             "type": "update"
                         }
                     ]
                 }
-            ]
-        elif request.args.get('type') == "DELETE":
-            response = [
-                {
-                    "success": boolean(1),
-                    "message": f"List {(request.args.get('type')).lower()} task event project %s success",
+
+        elif request.args.get('type').upper() == "DELETE":
+            response = {
+                    "success": True,
+                    "message": f"List {(request.args.get('type'))} task event of project {project_uuid} success",
                     "error_code": 0,
-                    "data": [{
-                            "task_event_id": 9,
+                    "data": [
+                        {
+                            "task_event_id": "c8f044f9-b2fb-49fd-ace4-45d7c740d828",
                             "status": "pending",
                             "type": "delete"
                         }
                     ]
                 }
-            ]
+        else:
+            return make_response(jsonify(
+                {
+                    "success": False,
+                    "message": "Invalid type '%s'" % (request.args.get('type')),
+                    "error_code": 417,
+                    "data": []
+                }
+            ), 417)
 
     return jsonify(response)
 
-@bp.route('/task-event/<task_event_id>')
+@bp.route('/task-event/<uuid:task_event_id>')
 def getTaskEvent(task_event_id):
     """Get result task event info
     ---
@@ -157,8 +164,14 @@ def getTaskEvent(task_event_id):
                 in: path
                 description: ID of task event
                 required: true
+                example:
+                    -   c8f044f9-b2fb-49fd-ace4-45d7c740d825
+                    -   c8f044f9-b2fb-49fd-ace4-45d7c740d826
+                    -   c8f044f9-b2fb-49fd-ace4-45d7c740d827
+                    -   c8f044f9-b2fb-49fd-ace4-45d7c740d828
                 schema:
                     type: string
+                    format: uuid
         responses:
             200:
                 description: task event info
@@ -196,50 +209,57 @@ def getTaskEvent(task_event_id):
                     application/json:
                         schema: DefaultError 
     """
+    print(task_event_id, type(task_event_id))
+    if str(task_event_id) == "c8f044f9-b2fb-49fd-ace4-45d7c740d825":
+        return jsonify(
+            {
+                "success": True,
+                "message": "Get task event success",
+                "error_code": 0,
+                "data": {
+                    'task_event_id': (task_event_id),
+                    'status': 'success',
+                    'type': "create"
+                }
+            }
+        )
+    elif str(task_event_id) == "c8f044f9-b2fb-49fd-ace4-45d7c740d826":
+        return jsonify(
+            {
+                "success": True,
+                "message": "Get task event success",
+                "error_code": 0,
+                "data": {
+                    'task_event_id': (task_event_id),
+                    'status': 'success',
+                    'type': "update"
+                }
+            }
+        )
+    elif str(task_event_id) == "c8f044f9-b2fb-49fd-ace4-45d7c740d827":
+        return jsonify(
+            {
+                "success": True,
+                "message": "Get task event success",
+                "error_code": 0,
+                "data": {
+                    'task_event_id': (task_event_id),
+                    'status': 'success',
+                    'type': "update"
+                }
+            }
+        )
+    elif str(task_event_id) == "c8f044f9-b2fb-49fd-ace4-45d7c740d828":
+        return jsonify(
+            {
+                "success": True,
+                "message": "Get task event success",
+                "error_code": 0,
+                "data": {
+                    'task_event_id': (task_event_id),
+                    'status': 'success',
+                    'type': "delete"
+                }
+            }
+        )
 
-    if int(task_event_id) == 1:
-        response = {
-                    "success": boolean(1),
-                    "message": "Get task event success",
-                    "error_code": 0,
-                    "data": {
-                        'task_event_id': int(task_event_id),
-                        'status': 'success',
-                        'type': "create"
-                    }
-                }
-    elif int(task_event_id) == 2:
-        response = {
-                    "success": boolean(1),
-                    "message": "Get task event success",
-                    "error_code": 0,
-                    "data": {
-                        'task_event_id': int(task_event_id),
-                        'status': 'success',
-                        'type': "update"
-                    }
-                }
-    elif int(task_event_id) == 3:
-        response = {
-                    "success": boolean(1),
-                    "message": "Get task event success",
-                    "error_code": 0,
-                    "data": {
-                        'task_event_id': int(task_event_id),
-                        'status': 'success',
-                        'type': "update"
-                    }
-                }
-    elif int(task_event_id) == 9:
-        response = {
-                    "success": boolean(1),
-                    "message": "Get task event success",
-                    "error_code": 0,
-                    "data": {
-                        'task_event_id': int(task_event_id),
-                        'status': 'success',
-                        'type': "delete"
-                    }
-                }
-
-    return jsonify(response)
