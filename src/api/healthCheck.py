@@ -38,7 +38,7 @@ def healthCheck():
     """
 
     response = {
-        'success': boolean(1),
+        'success': True,
         'error_code': 0,
         'message': "healthy"
     }

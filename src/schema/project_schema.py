@@ -3,7 +3,7 @@ from .utils import *
 
 
 class ProjectSchema(Schema):
-    uuid = fields.Str()
+    uuid = fields.Str(metadata={"format": "uuid"})
     origin_name = fields.Str()
     alias_name = fields.Str()
     description = fields.Str()

@@ -2,7 +2,7 @@ from marshmallow import Schema, fields
 from .utils import *
 
 class TaskEvent(Schema):
-    task_event_id = fields.Str()
+    task_event_id = fields.Str(metadata={"format": "uuid"})
     type = fields.Str()
     status = fields.Str()
 

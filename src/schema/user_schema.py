@@ -4,7 +4,7 @@ from .project_schema import ProjectResponseSchema
 from .utils import *
 
 class UserOfProject(Schema):
-    uuid = fields.Str()
+    uuid = fields.Str(metadata={"format": "uuid"})
     user_email = fields.Str()
     description = fields.Str()
     user_role = fields.Str()
