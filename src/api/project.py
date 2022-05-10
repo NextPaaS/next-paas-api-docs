@@ -135,29 +135,27 @@ def listProject():
         "success": True,
         "message": "List project success",
         "error_code": 0,
-        "data": {
-            "projects": [
-                {
-                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                    'origin_name': 'project1',
-                    'alias_name': "day la project 1",
-                    'description': "day la description project 1",
-                    'role': "owner",
-                    'is_active': True,
-                    'created_at': '2022-04-26T02:51:40.905Z',
-                    'updated_at': ''
-                }, {
-                    'uuid': '0bea2c68-01eb-43c1-8fc8-bacfefb6f63d',
-                    'origin_name': "project2",
-                    'alias_name': "cai nay to lam",
-                    'description': "",
-                    'role': "admin",
-                    'is_active': False,
-                    'created_at': '2022-04-26T02:51:40.905Z',
-                    'updated_at': '2022-04-26T02:51:40.905Z'
-                }
-            ]
-        },
+        "data": [
+            {
+                'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
+                'origin_name': 'project1',
+                'alias_name': "day la project 1",
+                'description': "day la description project 1",
+                'role': "owner",
+                'is_active': True,
+                'created_at': '2022-04-26T02:51:40.905Z',
+                'updated_at': ''
+            }, {
+                'uuid': '0bea2c68-01eb-43c1-8fc8-bacfefb6f63d',
+                'origin_name': "project2",
+                'alias_name': "cai nay to lam",
+                'description': "",
+                'role': "admin",
+                'is_active': False,
+                'created_at': '2022-04-26T02:51:40.905Z',
+                'updated_at': '2022-04-26T02:51:40.905Z'
+            }
+        ],
         "metadata": {
             "total": 100,
             "current_page": 1,
