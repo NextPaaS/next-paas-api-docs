@@ -52,14 +52,12 @@ class TaskEventCreateProjectResponse(Schema):
     message = fields.Str()
     error_code = fields.Int()
     data = fields.Nested(TaskEventCreateProject)
-    metadata = fields.Nested(Metadata)
 
 class TaskEventUpdateProjectResponse(Schema):
     success = fields.Boolean()
     message = fields.Str()
     error_code = fields.Int()
     data = fields.Nested(TaskEventUpdateProject)
-    metadata = fields.Nested(Metadata)
 
 
 class TaskEventDeleteProjectResponse(Schema):
@@ -67,4 +65,3 @@ class TaskEventDeleteProjectResponse(Schema):
     message = fields.Str()
     error_code = fields.Int()
     data = fields.Nested(TaskEventDeleteProject)
-    metadata = fields.Nested(Metadata)
