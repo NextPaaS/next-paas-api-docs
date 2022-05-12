@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields
 
-from .project_schema import ProjectResponseSchema
+from .project_schema import ProjectSchema
 from .utils import *
 
 class UserOfProject(Schema):
@@ -21,7 +21,7 @@ class ListUser(Schema):
 
 
 class ProjectUser(Schema):
-    project = fields.Nested(ProjectResponseSchema)
+    project = fields.Nested(ProjectSchema)
     users = fields.List(fields.Nested(UserOfProject))
 
 
