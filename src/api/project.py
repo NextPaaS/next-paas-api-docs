@@ -461,7 +461,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -469,7 +469,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -477,7 +477,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -485,7 +485,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -521,7 +521,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -529,7 +529,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -537,7 +537,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -545,7 +545,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -583,7 +583,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -591,7 +591,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -599,7 +599,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -607,7 +607,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -643,7 +643,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -651,7 +651,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -659,7 +659,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -667,7 +667,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -704,7 +704,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -712,7 +712,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -720,7 +720,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -728,7 +728,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -764,7 +764,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -772,7 +772,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -780,7 +780,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -788,7 +788,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -824,7 +824,7 @@ def getUserProject(project_uuid):
                         "users": [
                             {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                'user_email': f'{username}test@gmail.com',
+                                'email': f'{username}test@gmail.com',
                                 'description': "day la description project 1",
                                 'role': "admin",
                                 'is_active': True,
@@ -832,7 +832,7 @@ def getUserProject(project_uuid):
                                 'updated_at': ''
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                'user_email': f'{username}test1@gmail.com',
+                                'email': f'{username}test1@gmail.com',
                                 'description': "user full permission",
                                 'role': "owner",
                                 'is_active': True,
@@ -840,7 +840,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': f'{username}test2@gmail.com',
+                                'email': f'{username}test2@gmail.com',
                                 'description': "day la role reader",
                                 'role': "reader",
                                 'is_active': False,
@@ -848,7 +848,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': f'{username}test3@gmail.com',
+                                'email': f'{username}test3@gmail.com',
                                 'description': "day la role custom",
                                 'role': "dev",
                                 'is_active': False,
@@ -886,7 +886,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -894,7 +894,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -902,7 +902,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -910,7 +910,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -946,7 +946,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -954,7 +954,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -962,7 +962,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -970,7 +970,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1008,7 +1008,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1016,7 +1016,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1024,7 +1024,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1032,7 +1032,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1068,7 +1068,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1076,7 +1076,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1084,7 +1084,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1092,7 +1092,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1129,7 +1129,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1137,7 +1137,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1145,7 +1145,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1153,7 +1153,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1189,7 +1189,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1197,7 +1197,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1205,7 +1205,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1213,7 +1213,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1249,7 +1249,7 @@ def getUserProject(project_uuid):
                         "users": [
                             {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                'user_email': 'test@gmail.com',
+                                'email': 'test@gmail.com',
                                 'description': "day la description project 1",
                                 'role': "admin",
                                 'is_active': True,
@@ -1257,7 +1257,7 @@ def getUserProject(project_uuid):
                                 'updated_at': ''
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                'user_email': 'test1@gmail.com',
+                                'email': 'test1@gmail.com',
                                 'description': "user full permission",
                                 'role': "owner",
                                 'is_active': True,
@@ -1265,7 +1265,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': 'test2@gmail.com',
+                                'email': 'test2@gmail.com',
                                 'description': "day la role reader",
                                 'role': "reader",
                                 'is_active': False,
@@ -1273,7 +1273,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': 'test3@gmail.com',
+                                'email': 'test3@gmail.com',
                                 'description': "day la role custom",
                                 'role': "dev",
                                 'is_active': False,
@@ -1313,7 +1313,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1321,7 +1321,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1329,7 +1329,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1337,7 +1337,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1374,7 +1374,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1382,7 +1382,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1390,7 +1390,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1398,7 +1398,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1436,7 +1436,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1444,7 +1444,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1452,7 +1452,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1460,7 +1460,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1497,7 +1497,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1505,7 +1505,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1513,7 +1513,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1521,7 +1521,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1559,7 +1559,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1567,7 +1567,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1575,7 +1575,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1583,7 +1583,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1620,7 +1620,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': f'{username}test@gmail.com',
+                                    'email': f'{username}test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1628,7 +1628,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': f'{username}test1@gmail.com',
+                                    'email': f'{username}test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1637,7 +1637,7 @@ def getUserProject(project_uuid):
                                 },
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test2@gmail.com',
+                                    'email': f'{username}test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1645,7 +1645,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': f'{username}test3@gmail.com',
+                                    'email': f'{username}test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1682,7 +1682,7 @@ def getUserProject(project_uuid):
                         "users": [
                             {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                'user_email': f'{username}test@gmail.com',
+                                'email': f'{username}test@gmail.com',
                                 'description': "day la description project 1",
                                 'role': "admin",
                                 'is_active': True,
@@ -1690,7 +1690,7 @@ def getUserProject(project_uuid):
                                 'updated_at': ''
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                'user_email': f'{username}test1@gmail.com',
+                                'email': f'{username}test1@gmail.com',
                                 'description': "user full permission",
                                 'role': "owner",
                                 'is_active': True,
@@ -1699,7 +1699,7 @@ def getUserProject(project_uuid):
                             },
                             {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': f'{username}test2@gmail.com',
+                                'email': f'{username}test2@gmail.com',
                                 'description': "day la role reader",
                                 'role': "reader",
                                 'is_active': False,
@@ -1707,7 +1707,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': f'{username}test3@gmail.com',
+                                'email': f'{username}test3@gmail.com',
                                 'description': "day la role custom",
                                 'role': "dev",
                                 'is_active': False,
@@ -1746,7 +1746,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1754,7 +1754,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1762,7 +1762,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1770,7 +1770,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1807,7 +1807,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1815,7 +1815,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1824,7 +1824,7 @@ def getUserProject(project_uuid):
                                 },
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1832,7 +1832,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1870,7 +1870,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -1878,7 +1878,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1886,7 +1886,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1894,7 +1894,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1930,7 +1930,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -1938,7 +1938,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -1946,7 +1946,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -1955,7 +1955,7 @@ def getUserProject(project_uuid):
                                 },
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -1992,7 +1992,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "reader",
                                     'is_active': False,
@@ -2000,7 +2000,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -2008,7 +2008,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -2016,7 +2016,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -2052,7 +2052,7 @@ def getUserProject(project_uuid):
                             "users": [
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                    'user_email': 'test@gmail.com',
+                                    'email': 'test@gmail.com',
                                     'description': "day la description project 1",
                                     'role': "admin",
                                     'is_active': True,
@@ -2060,7 +2060,7 @@ def getUserProject(project_uuid):
                                     'updated_at': ''
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                    'user_email': 'test1@gmail.com',
+                                    'email': 'test1@gmail.com',
                                     'description': "user full permission",
                                     'role': "owner",
                                     'is_active': True,
@@ -2069,7 +2069,7 @@ def getUserProject(project_uuid):
                                 },
                                 {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test2@gmail.com',
+                                    'email': 'test2@gmail.com',
                                     'description': "day la role reader",
                                     'role': "reader",
                                     'is_active': False,
@@ -2077,7 +2077,7 @@ def getUserProject(project_uuid):
                                     'updated_at': '2022-04-26T02:51:40.905Z'
                                 }, {
                                     'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                    'user_email': 'test3@gmail.com',
+                                    'email': 'test3@gmail.com',
                                     'description': "day la role custom",
                                     'role': "dev",
                                     'is_active': False,
@@ -2113,7 +2113,7 @@ def getUserProject(project_uuid):
                         "users": [
                             {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                                'user_email': 'test@gmail.com',
+                                'email': 'test@gmail.com',
                                 'description': "day la description project 1",
                                 'role': "admin",
                                 'is_active': True,
@@ -2121,7 +2121,7 @@ def getUserProject(project_uuid):
                                 'updated_at': ''
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                                'user_email': 'test1@gmail.com',
+                                'email': 'test1@gmail.com',
                                 'description': "user full permission",
                                 'role': "owner",
                                 'is_active': True,
@@ -2129,7 +2129,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': 'test2@gmail.com',
+                                'email': 'test2@gmail.com',
                                 'description': "day la role reader",
                                 'role': "reader",
                                 'is_active': False,
@@ -2137,7 +2137,7 @@ def getUserProject(project_uuid):
                                 'updated_at': '2022-04-26T02:51:40.905Z'
                             }, {
                                 'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                                'user_email': 'test3@gmail.com',
+                                'email': 'test3@gmail.com',
                                 'description': "day la role custom",
                                 'role': "dev",
                                 'is_active': False,
@@ -2175,7 +2175,7 @@ def getUserProject(project_uuid):
                 "users": [
                     {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f26',
-                        'user_email': 'test@gmail.com',
+                        'email': 'test@gmail.com',
                         'description': "day la description project 1",
                         'role': "admin",
                         'is_active': True,
@@ -2183,7 +2183,7 @@ def getUserProject(project_uuid):
                         'updated_at': ''
                     }, {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f25',
-                        'user_email': 'test1@gmail.com',
+                        'email': 'test1@gmail.com',
                         'description': "user full permission",
                         'role': "owner",
                         'is_active': True,
@@ -2191,7 +2191,7 @@ def getUserProject(project_uuid):
                         'updated_at': '2022-04-26T02:51:40.905Z'
                     }, {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                        'user_email': 'test2@gmail.com',
+                        'email': 'test2@gmail.com',
                         'description': "day la role reader",
                         'role': "reader",
                         'is_active': False,
@@ -2199,7 +2199,7 @@ def getUserProject(project_uuid):
                         'updated_at': '2022-04-26T02:51:40.905Z'
                     }, {
                         'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-                        'user_email': 'test3@gmail.com',
+                        'email': 'test3@gmail.com',
                         'description': "day la role custom",
                         'role': "dev",
                         'is_active': False,
