@@ -125,7 +125,7 @@ def listProject():
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
@@ -192,7 +192,7 @@ def createProject():
 
         responses:
             200:
-                description: Task event info
+                description: Success response
                 content:
                     application/json:
                         schema: TaskEventCreateProjectResponse
@@ -222,7 +222,7 @@ def createProject():
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
@@ -302,7 +302,7 @@ def getProject(project_uuid):
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
@@ -430,7 +430,7 @@ def getUserProject(project_uuid):
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
@@ -2279,7 +2279,7 @@ def updateProject(project_uuid):
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
@@ -2365,7 +2365,7 @@ def deleteProject(project_uuid):
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
