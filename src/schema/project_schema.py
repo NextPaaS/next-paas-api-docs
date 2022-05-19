@@ -13,6 +13,9 @@ class ProjectSchema(Schema):
     updated_at = fields.DateTime()
 
 
+class GetProjectSchema(Schema):
+    project_uuid = fields.Str(metadata={"format": "uuid"})
+
 class ProjectResponseSchema(Schema):
     success = fields.Boolean()
     message = fields.Str()
