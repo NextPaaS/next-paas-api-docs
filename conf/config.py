@@ -23,7 +23,7 @@ def _get_config_value(key, default_value=None):
 class BaseConfig(object):
     """..."""
 
-    APP_NAME = _get_config_value("APP_NAME", "event-hook-service")
+    APP_NAME = _get_config_value("APP_NAME", "iam-document-v2")
     DATABASE_URI = _get_config_value(
         "DATABASE_URL",
         "",
