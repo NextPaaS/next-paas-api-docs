@@ -1,30 +1,30 @@
 from marshmallow import Schema, fields
+
+from .resource_schema import *
 from .utils import *
 
 
-class ProjectSchema(Schema):
+class RoleSchema(Schema):
     uuid = fields.Str(metadata={"format": "uuid"})
-    origin_name = fields.Str()
-    alias_name = fields.Str()
+    name = fields.Str(metadata={"format": "string"})
     description = fields.Str()
-    role = fields.Str()
-    is_actice = fields.Boolean()
+    is_custom = fields.Boolean()
+    is_active = fields.Boolean()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
+    deleted_at = fields.DateTime()
 
-
-class GetProjectSchema(Schema):
-    project_uuid = fields.Str(metadata={"format": "uuid"})
-
-class ProjectResponseSchema(Schema):
+class ListRoleSchemaResponse(Schema):
     success = fields.Boolean()
     message = fields.Str()
     error_code = fields.Int()
-    data = fields.Nested(ProjectSchema)
+    data = fields.List(fields.Nested(RoleSchema))
+    metadata = fields.Nested(Metadata)
 
-class ProjectListResponseSchema(Schema):
+
+class GetRoleSchemaResponse(Schema):
     success = fields.Boolean()
     message = fields.Str()
     error_code = fields.Int()
-    data = fields.List(fields.Nested(ProjectSchema))
+    data = fields.List(fields.Nested(RoleSchema))
     metadata = fields.Nested(Metadata)

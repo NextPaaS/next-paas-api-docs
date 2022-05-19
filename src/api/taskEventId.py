@@ -62,7 +62,7 @@ def listTaskEvent(project_uuid):
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError 
@@ -174,7 +174,7 @@ def getTaskEvent(task_event_id):
                     format: uuid
         responses:
             200:
-                description: task event info
+                description: Success response
                 content:
                     application/json:
                         schema: TaskEventResponse
@@ -204,7 +204,7 @@ def getTaskEvent(task_event_id):
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError 

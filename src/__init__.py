@@ -16,9 +16,14 @@ def create_app():
     app = Flask(__name__, template_folder='../templates', static_folder='../static')
     app.config['JSON_SORT_KEYS'] = False
     CORS(app, origins=[
-            "http://*.bizflycloud.vn",
-			"http://*.vccloud.vn",
-			"https://*.bizflycloud.vn",
+			"https://staging.bizflycloud.vn",
+            "https://staging2.bizflycloud.vn",
+            "https://dev-iam.bizflycloud.vn",
+			"https://beta-staging.vccloud.vn",
+            "https://beta-staging2.bizflycloud.vn",
+            "https://manage.bizflycloud.vn",
+            "https://hn.manage.bizflycloud.vn",
+            "https://hcm.manage.bizflycloud.vn",
 			"https://*.vccloud.vn",
 			"http://*.bizflycloud.vn:8081",
 			"http://*.bizflycloud.vn:8080",
@@ -78,6 +83,8 @@ def create_app():
     from src.api.project import listProject, getProject, getUserProject, updateProject, deleteProject, createProject
     from src.api.healthCheck import healthCheck
     from src.api.taskEventId import getTaskEvent
+    from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser
+    from src.api.role import createRole, getRole, updateRole, listRole, deleteRole
 
     with app.test_request_context():
         spec.path(view=healthCheck)
@@ -89,13 +96,23 @@ def create_app():
         spec.path(view=createProject)
         spec.path(view=updateProject)
         spec.path(view=deleteProject)
+        spec.path(view=listUser)
+        spec.path(view=getUser)
+        spec.path(view=inviteUser)
+        spec.path(view=updateUser)
+        spec.path(view=deleteUser)
+        spec.path(view=listRole)
+        spec.path(view=getRole)
+        spec.path(view=createRole)
+        spec.path(view=updateRole)
+        spec.path(view=deleteRole)
 
     @app.route('/docs')
     @app.route('/docs/<path:path>')
 #    @app.route('/<path:uri>/docs/<path:path>')
     def swagger_docs(uri=None, path=None):
         if not path or path == 'index.html':
-             return render_template('index.html', base_url=f"/api/iam/v2/docs")
+            return render_template('index.html', base_url=f"/api/iam/v2/docs")
 #            if uri == None:
 #                return render_template('index.html', base_url=f"/docs")
 #            else:

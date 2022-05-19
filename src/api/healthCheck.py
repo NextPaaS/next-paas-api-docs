@@ -31,7 +31,7 @@ def healthCheck():
                     application/json:
                         schema: ServerError
             default:
-                description: Status Expectation Failed
+                description: Default response
                 content:
                     application/json:
                         schema: DefaultError
