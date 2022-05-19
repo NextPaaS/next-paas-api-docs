@@ -10,7 +10,7 @@ class UserOfProject(Schema):
     user_role = fields.Str()
     is_active = fields.Boolean()
     created_at = fields.DateTime()
-    updaed_at = fields.DateTime()
+    updated_at = fields.DateTime()
 
 
 class GetUser(Schema):
@@ -41,8 +41,11 @@ class ListUserOfProject(Schema):
 
 
 class ListProjectOfUser(Schema):
+    uuid = fields.Str(metadata={"format": "uuid"})
     email = fields.Str(metadata={"format": "email"})
     project_name = fields.List(fields.Str())
+    is_active = fields.Boolean()
+    created_at = fields.DateTime()
 
 
 class ListProjectOfUserResponse(Schema):
