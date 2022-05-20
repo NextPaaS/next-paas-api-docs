@@ -1,6 +1,4 @@
 from marshmallow import Schema, fields
-
-from .resource_schema import *
 from .utils import *
 
 
@@ -27,4 +25,3 @@ class GetRoleSchemaResponse(Schema):
     message = fields.Str()
     error_code = fields.Int()
     data = fields.List(fields.Nested(RoleSchema))
-    metadata = fields.Nested(Metadata)
