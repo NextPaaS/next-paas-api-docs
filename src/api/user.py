@@ -111,27 +111,87 @@ def listUser():
                         schema: DefaultError
     """
     data = [
-            {
-                "uuid": "b0a6dc1e-dda8-4562-b62c-007bb7993f27",
-                "email": "user1@gmail.com",
-                "project_name": ["project1", "project2"],
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z"
-            },
-            {
-                "uuid": "b0a6dc1e-dda8-4562-b62c-007bb7993f06",
-                "email": "user2@gmail.com",
-                "project_name": ["project1", "project3", "project4"],
-                "is_active": True,
-                "created_at": "2022-04-30T02:51:40.905Z"
-            },
-            {
-                "uuid": "b0a6dc1e-dda8-4562-b62c-007bb7993f88",
-                "email": "user3@gmail.com",
-                "project_name": ["project4"],
-                "is_active": False,
-                "created_at": "2022-04-28T02:51:40.905Z"
-            }
+        {
+            "uuid": "b0a6dc1e-dda8-4562-b62c-007bb7993f27",
+            "email": "user1@gmail.com",
+            "is_active": True,
+            "created_at": "2022-04-26T02:51:40.905Z",
+            "projects": [
+                {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                    'origin_name': 'project1',
+                    'alias_name': "day la project 1",
+                    'description': "day la description project 1",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }, {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-070dd6355r05',
+                    'origin_name': 'project2',
+                    'alias_name': "day la project 2",
+                    'description': "day la description project 1",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }
+            ],
+        }, {
+            "uuid": "b0a6dc1e-dda8-4562-b62c-007bb7993fp7",
+            "email": "user2@gmail.com",
+            "is_active": True,
+            "created_at": "2022-04-26T02:51:40.905Z",
+            "projects": [
+                {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                    'origin_name': 'project1',
+                    'alias_name': "day la project 1",
+                    'description': "day la description project 1",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }, {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f09',
+                    'origin_name': 'project3',
+                    'alias_name': "day la project 3",
+                    'description': "day la description project 3",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }, {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f09',
+                    'origin_name': 'project4',
+                    'alias_name': "day la project 4",
+                    'description': "day la description project 4",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }
+            ],
+        }, {
+            "uuid": "b0a6dc1e-dda8-4562-b62c-007bb7993fo7",
+            "email": "user3@gmail.com",
+            "is_active": False,
+            "created_at": "2022-04-26T02:51:40.905Z",
+            "projects": [
+                {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                    'origin_name': 'project1',
+                    'alias_name': "day la project 1",
+                    'description': "day la description project 1",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }, {
+                    'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f99',
+                    'origin_name': 'project1',
+                    'alias_name': "day la project 1",
+                    'description': "day la description project 1",
+                    'is_active': True,
+                    'created_at': '2022-04-26T02:51:40.905Z',
+                    'updated_at': '2022-04-26T02:51:40.905Z'
+                }
+            ],
+        }
         ]
 
     response = {
