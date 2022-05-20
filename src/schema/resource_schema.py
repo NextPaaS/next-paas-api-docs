@@ -14,7 +14,7 @@ class ResourceSchema(Schema):
     updated_at = fields.DateTime()
     deleted_at = fields.DateTime()
 
-class ListRoleSchemaResponse(Schema):
+class ListResourceSchemaResponse(Schema):
     success = fields.Boolean()
     message = fields.Str()
     error_code = fields.Int()
