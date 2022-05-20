@@ -43,9 +43,9 @@ class ListUserOfProject(Schema):
 class ListProjectOfUser(Schema):
     uuid = fields.Str(metadata={"format": "uuid"})
     email = fields.Str(metadata={"format": "email"})
-    project_name = fields.List(fields.Str())
     is_active = fields.Boolean()
     created_at = fields.DateTime()
+    projects = fields.List(fields.Nested(ProjectSchema))
 
 
 class ListProjectOfUserResponse(Schema):
