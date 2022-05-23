@@ -412,11 +412,11 @@ def updateUser(user_uuid):
     """
     req = request.get_json()
     project_uuid = req["project_uuid"]
-    email = req["email"]
     role_uuid = req["role_uuid"]
+    user_uuid = req["user_uuid"]
     response = {
         "success": True,
-        "message": "Attach user %s with role %s to project %s successfully",
+        "message": "Attach user %s with role %s to project %s successfully" % (user_uuid, role_uuid, project_uuid),
         "error_code": 0,
     }
     return jsonify(response)
@@ -483,7 +483,7 @@ def deleteUser(user_uuid):
     project_uuid = req["project_uuid"]
     response = {
         "success": True,
-        "message": "Detach user %s from project %s successfully",
+        "message": "Detach user %s from project %s successfully" % (user_uuid, project_uuid),
         "error_code": 0,
     }
     return jsonify(response)
