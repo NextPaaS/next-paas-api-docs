@@ -19,6 +19,16 @@ class GetUser(Schema):
     error_code = fields.Int()
     data = fields.Nested(UserOfProject)
 
+class UserProject(Schema):
+    project = fields.Nested(ProjectSchema)
+    user = fields.Nested(UserOfProject)
+
+class UserProjectResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(UserProject)
+
 class ListUser(Schema):
     success = fields.Boolean()
     message = fields.Str()

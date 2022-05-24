@@ -23,6 +23,14 @@ def listRole(project_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
+                required: true
+                schema:
+                    type: string
+            -   name: project_uuid
+                in: path
+                description: project_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
                 required: true
                 schema:
                     type: string
@@ -210,6 +218,7 @@ def createRole():
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -267,9 +276,18 @@ def getRole(role_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
+            -   name: role_uuid
+                in: path
+                description: role_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
 
         responses:
             200:
@@ -324,9 +342,18 @@ def updateRole(role_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
+            -   name: role_uuid
+                in: path
+                description: role_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
 
         responses:
             200:
@@ -381,9 +408,18 @@ def deleteRole(role_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
+            -   name: role_uuid
+                in: path
+                description: role_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
 
         responses:
             200:

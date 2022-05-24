@@ -25,6 +25,7 @@ def listUser():
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -224,6 +225,7 @@ def inviteUser():
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -294,15 +296,32 @@ def getUser(user_uuid, project_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
+            -   name: user_uuid
+                in: path
+                description: user_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
+            -   name: project_uuid
+                in: path
+                description: project_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
         responses:
             200:
                 description: Response success
                 content:
                     application/json:
-                        schema: GetUser
+                        schema: UserProjectResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -336,14 +355,27 @@ def getUser(user_uuid, project_uuid):
     """
 
     data = {
-        'uuid': 'b0a6dc1e-dda8-4562-b62c-007bb7993f27',
-        'email': f'test3@gmail.com',
-        'description': "day la role custom",
-        'role': "reader",
-        'is_active': True,
-        'created_at': '2022-04-21T02:30:28.911Z',
-        'updated_at': '2022-04-26T02:51:40.905Z'
-    }
+        "user": 
+            {
+                'uuid': user_uuid,
+                'email': f'test3@gmail.com',
+                'description': "day la role custom",
+                'role': "reader",
+                'is_active': True,
+                'created_at': '2022-04-21T02:30:28.911Z',
+                'updated_at': '2022-04-26T02:51:40.905Z'
+            },
+        "project":
+            {
+            'uuid': project_uuid,
+            'origin_name': 'project1',
+            'alias_name': "day la project 1",
+            'description': "day la description project 1",
+            'is_active': True,
+            'created_at': '2022-04-26T02:51:40.905Z',
+            'updated_at': '2022-04-26T02:51:40.905Z'
+            }
+        }
     response = {
         "success": True,
         "message": "get users %s of project %s success",
@@ -365,9 +397,18 @@ def updateUser(user_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
+            -   name: user_uuid
+                in: path
+                description: user_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
         requestBody:
             content:
                 application/json:
@@ -434,9 +475,18 @@ def deleteUser(user_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
+            -   name: user_uuid
+                in: path
+                description: user_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
         requestBody:
             content:
                 application/json:
