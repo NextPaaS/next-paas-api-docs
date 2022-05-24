@@ -24,6 +24,7 @@ def listProject():
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -182,6 +183,7 @@ def createProject():
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -259,6 +261,7 @@ def getProject(project_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -337,6 +340,7 @@ def getUserProject(project_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -2233,6 +2237,7 @@ def updateProject(project_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
@@ -2323,6 +2328,7 @@ def deleteProject(project_uuid):
             -   name: cookie
                 in: header
                 description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
