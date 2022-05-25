@@ -390,7 +390,7 @@ def getProjectsOfUser(user_uuid):
     """get list project of user
     ---
     get:
-        summary: get list project of user
+        summary: get list project of user, role of user in project must get in project
         tags:
             - Users
         description: get list project of user
@@ -465,6 +465,7 @@ def getProjectsOfUser(user_uuid):
             'origin_name': 'project1',
             'alias_name': "day la project 1",
             'description': "day la description project 1",
+            'role': "maintainer",
             'is_active': True,
             'created_at': '2022-04-26T02:51:40.905Z',
             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -474,6 +475,7 @@ def getProjectsOfUser(user_uuid):
             'origin_name': 'project7',
             'alias_name': "day la project 7",
             'description': "day la description project 1",
+            'role': "admin",
             'is_active': True,
             'created_at': '2022-04-26T02:51:40.905Z',
             'updated_at': '2022-04-26T02:51:40.905Z'
@@ -482,7 +484,8 @@ def getProjectsOfUser(user_uuid):
             'uuid': "b0a6dc1e-dda8-4562-b62c-007bb7993f25",
             'origin_name': 'project3',
             'alias_name': "day la project 3",
-            'description': "day la description project 1",
+            'description': "day la description project 3",
+            'role': "member",
             'is_active': True,
             'created_at': '2022-04-26T02:51:40.905Z',
             'updated_at': '2022-04-26T02:51:40.905Z'

@@ -12,6 +12,17 @@ class ProjectSchema(Schema):
     updated_at = fields.DateTime()
 
 
+class ProjectSchemaWithRole(Schema):
+    uuid = fields.Str(metadata={"format": "uuid"})
+    origin_name = fields.Str()
+    alias_name = fields.Str()
+    description = fields.Str()
+    role = fields.Str()
+    is_active = fields.Boolean()
+    created_at = fields.DateTime()
+    updated_at = fields.DateTime()
+
+
 class GetProjectSchema(Schema):
     project_uuid = fields.Str(metadata={"format": "uuid"})
 
