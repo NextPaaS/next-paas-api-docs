@@ -657,7 +657,7 @@ def deleteRole(role_uuid):
                     'type': 'delete'
                 }
             }, {
-                "project": role
+                "role": role
             }
         ]
     }
