@@ -1,4 +1,3 @@
-from xmlrpc.client import boolean
 from marshmallow import Schema, fields
 
 class DefaultError(Schema):
@@ -10,17 +9,17 @@ class DefaultError(Schema):
 class UnauthorizedError(Schema):
     success = fields.Boolean(metadata={"format": "boolean", "example": False})
     error_code = fields.Int(metadata={"format": "int32", "example": 401})
-    message = fields.Str()
+    message = fields.Str(metadata={"format": "string", "example": "Unauthorized"})
 
 class PermissionDeny(Schema):
     success = fields.Boolean(metadata={"format": "boolean", "example": False})
     error_code = fields.Int(metadata={"format": "int32", "example": 403})
-    message = fields.Str(metadata={"format": "string", "example": "permission deny"})
+    message = fields.Str(metadata={"format": "string", "example": "Permission Deny"})
 
 class PageNotFound(Schema):
     success = fields.Boolean(metadata={"format": "boolean", "example": False})
     error_code = fields.Int(metadata={"format": "int32", "example": 404})
-    message = fields.Str()
+    message = fields.Str(metadata={"format": "string", "example": "NotFound"})
 
 class StatusExpectationFailed(Schema):
     success = fields.Boolean(metadata={"format": "boolean", "example": False})
@@ -30,4 +29,4 @@ class StatusExpectationFailed(Schema):
 class ServerError(Schema):
     success = fields.Boolean(metadata={"format": "boolean", "example": False})
     error_code = fields.Int(metadata={"format": "int32", "example": 500})
-    message = fields.Str()
+    message = fields.Str(metadata={"format": "string", "example": "Server Error"})

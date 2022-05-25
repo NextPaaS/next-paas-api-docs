@@ -9,6 +9,8 @@ class ResourceSchema(Schema):
     type = fields.Str(metadata={"format": "string"})
     service_type = fields.Str(metadata={"format": "string"})
     service_name = fields.Str(metadata={"format": "string"})
+    endpoint = fields.Str()
+    description = fields.Str()
     is_active = fields.Boolean()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()

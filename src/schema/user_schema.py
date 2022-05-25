@@ -5,9 +5,9 @@ from .utils import *
 
 class UserOfProject(Schema):
     uuid = fields.Str(metadata={"format": "uuid"})
-    user_email = fields.Str(metadata={"format": "email"})
+    email = fields.Str(metadata={"format": "email"})
     description = fields.Str()
-    user_role = fields.Str()
+    role = fields.Str()
     is_active = fields.Boolean()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
@@ -41,6 +41,16 @@ class ProjectUser(Schema):
     project = fields.Nested(ProjectSchema)
     users = fields.List(fields.Nested(UserOfProject))
 
+class ProjectOfUser(Schema):
+    projects = fields.List(fields.Nested(ProjectSchema))
+    user = fields.Nested(UserOfProject)
+
+class ListProjectOfUser(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(ProjectOfUser)
+    metadata = fields.Nested(Metadata)
 
 class ListUserOfProject(Schema):
     success = fields.Boolean()
