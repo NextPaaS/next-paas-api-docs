@@ -113,7 +113,7 @@ def create_app():
 #    @app.route('/<path:uri>/docs/<path:path>')
     def swagger_docs(uri=None, path=None):
         if not path or path == 'index.html':
-            return render_template('index.html', base_url=f"/docs")
+            return render_template('index.html', base_url=f"/api/iam/v2/docs")
 #            if uri == None:
 #                return render_template('index.html', base_url=f"/docs")
 #            else:
