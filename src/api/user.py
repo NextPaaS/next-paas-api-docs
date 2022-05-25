@@ -384,6 +384,120 @@ def getUser(user_uuid, project_uuid):
     }
     return jsonify(response)
 
+
+@bp.route('/user/<uuid:user_uuid>/projects', methods=["GET"])
+def getProjectsOfUser(user_uuid):
+    """get list project of user
+    ---
+    get:
+        summary: get list project of user
+        tags:
+            - Users
+        description: get list project of user
+        parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
+                required: true
+                schema:
+                    type: string
+            -   name: user_uuid
+                in: path
+                description: user_uuid
+                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                required: true
+                schema:
+                    type: string
+                    format: uuid
+        responses:
+            200:
+                description: Response success
+                content:
+                    application/json:
+                        schema: ListProjectOfUser
+            401:
+                description: Access token is missing or invalid
+                content:
+                    application/json:
+                        schema: UnauthorizedError
+            403:
+                description: Permission Deny
+                content:
+                    application/json:
+                        schema: PermissionDeny
+            404:
+                description: Page Notfound
+                content:
+                    application/json:
+                        schema: PageNotFound
+            417:
+                description: Status Expectation Failed
+                content:
+                    application/json:
+                        schema: StatusExpectationFailed
+            500:
+                description: Server Error
+                content:
+                    application/json:
+                        schema: ServerError
+            default:
+                description: Default response
+                content:
+                    application/json:
+                        schema: DefaultError
+    """
+
+    data = {
+        "user": 
+            {
+                'uuid': user_uuid,
+                'email': f'test3@gmail.com',
+                'description': "day la role custom",
+                'role': "reader",
+                'is_active': True,
+                'created_at': '2022-04-21T02:30:28.911Z',
+                'updated_at': '2022-04-26T02:51:40.905Z'
+            },
+        "projects": [
+            {
+            'uuid': "b0a6dc1e-dda8-4562-b62c-007bb7993f25",
+            'origin_name': 'project1',
+            'alias_name': "day la project 1",
+            'description': "day la description project 1",
+            'is_active': True,
+            'created_at': '2022-04-26T02:51:40.905Z',
+            'updated_at': '2022-04-26T02:51:40.905Z'
+            },
+            {
+            'uuid': "b0a6dc1e-dda8-4562-b62c-007bb7993f25",
+            'origin_name': 'project7',
+            'alias_name': "day la project 7",
+            'description': "day la description project 1",
+            'is_active': True,
+            'created_at': '2022-04-26T02:51:40.905Z',
+            'updated_at': '2022-04-26T02:51:40.905Z'
+            },
+            {
+            'uuid': "b0a6dc1e-dda8-4562-b62c-007bb7993f25",
+            'origin_name': 'project3',
+            'alias_name': "day la project 3",
+            'description': "day la description project 1",
+            'is_active': True,
+            'created_at': '2022-04-26T02:51:40.905Z',
+            'updated_at': '2022-04-26T02:51:40.905Z'
+            },
+        ]
+    }
+    response = {
+        "success": True,
+        "message": "get users %s of project %s success",
+        "error_code": 0,
+        "data": data
+    }
+    return jsonify(response)
+
+
 @bp.route('/user/update/<uuid:user_uuid>', methods=["PUT"])
 def updateUser(user_uuid):
     """update user in project

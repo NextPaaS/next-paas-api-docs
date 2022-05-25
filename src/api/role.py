@@ -10,15 +10,15 @@ from flask import jsonify, request
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
-@bp.route('/roles/<uuid:project_uuid>', methods=["GET"])
-def listRole(project_uuid):
-    """list role in project
+@bp.route('/roles', methods=["GET"])
+def listRole():
+    """list role created by user
     ---
     get:
-        summary: list role in project
+        summary: list role created by user
         tags:
             - Roles
-        description: list role in project
+        description: list role created by user
         parameters:
             -   name: cookie
                 in: header
@@ -207,13 +207,13 @@ def listRole(project_uuid):
 
 @bp.route('/role/create', methods=["POST"])
 def createRole():
-    """create role in project
+    """create role CHUA CO MOCK API
     ---
     post:
-        summary: create role in project
+        summary: create role CHUA CO MOCK API
         tags:
             - Roles
-        description: create role in project
+        description: create role CHUA CO MOCK API
         parameters:
             -   name: cookie
                 in: header
@@ -263,15 +263,15 @@ def createRole():
     pass
 
 
-@bp.route('/role/<uuid:role_uid>', methods=["GET"])
+@bp.route('/role/<uuid:role_uuid>', methods=["GET"])
 def getRole(role_uuid):
-    """get role info in project
+    """get role info
     ---
     get:
-        summary: get role info in project
+        summary: get role info
         tags:
             - Roles
-        description: get role info in project
+        description: get role info
         parameters:
             -   name: cookie
                 in: header
@@ -326,18 +326,194 @@ def getRole(role_uuid):
                     application/json:
                         schema: DefaultError
     """
-    pass
+    data = {
+        "role": {
+            "uuid": role_uuid,
+            "name": "Owner",
+            "description": "role owner",
+            "is_custom": False,
+            "is_active": True,
+            "created_at": "2022-04-26T02:51:40.905Z",
+            "updated_at": None,
+            "deleted_at": None,
+        },
+        "resources": [
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm7",
+                "name": "chua nghi ra",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.servers.*",
+                "action": "allow",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm8",
+                "name": "",
+                "type": "Create",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.servers.create",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.servers.*.details",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm6",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.volumes",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
+                "name": "",
+                "type": "Create",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.volumes.create",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm4",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.backup",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm0",
+                "name": "",
+                "type": "Create",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.backup.create",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffz8",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Cloud server",
+                "endpoint": "iaas-cloud.quotas",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeff96",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Simple Storage",
+                "endpoint": "simple-storage.listing",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeff9x",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Simple Storage",
+                "endpoint": "simple-storage.detail.*.files",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeff66",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Simple Storage",
+                "endpoint": "simple-storage.detail.*.settings",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+            {
+                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeff65",
+                "name": "",
+                "type": "Get",
+                "service_type": "infra",
+                "service_name": "Simple Storage",
+                "endpoint": "simple-storage.detail.*.statistics",
+                "action": "",
+                "is_active": True,
+                "created_at": "2022-04-26T02:51:40.905Z",
+                "updated_at": None,
+                "deleted_at": None,
+            },
+        ]
+    }
+    response = {
+        "success": True,
+        "message": "get info role %s success" % role_uuid,
+        "error_code": 0,
+        "data": data,
+    }
+    return jsonify(response)
 
 
 @bp.route('/role/update/<uuid:role_uuid>', methods=["GET"])
 def updateRole(role_uuid):
-    """update role in project
+    """update role CHUA CO MOCK API
     ---
     put:
-        summary: update role in project
+        summary: update role CHUA CO MOCK API
         tags:
             - Roles
-        description: update role in project
+        description: update role CHUA CO MOCK API
         parameters:
             -   name: cookie
                 in: header
@@ -397,13 +573,13 @@ def updateRole(role_uuid):
 
 @bp.route('/role/<uuid:role_uuid>', methods=["DELETE"])
 def deleteRole(role_uuid):
-    """delete role in project
+    """delete role
     ---
     delete:
-        summary: delete role in project
+        summary: delete role
         tags:
             - Roles
-        description: delete role in project
+        description: delete role
         parameters:
             -   name: cookie
                 in: header
@@ -426,7 +602,7 @@ def deleteRole(role_uuid):
                 description: Success response
                 content:
                     application/json:
-                        schema: 
+                        schema: TaskEventDeleteRoleResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -458,4 +634,32 @@ def deleteRole(role_uuid):
                     application/json:
                         schema: DefaultError
     """
-    pass
+    role = {
+        "uuid": role_uuid,
+        "name": "Custom role",
+        "description": "Role custom",
+        "is_custom": True,
+        "is_active": True,
+        "created_at": "2022-04-26T02:51:40.905Z",
+        "updated_at": None,
+        "deleted_at": None,
+    }
+
+    response = {
+        "success": True,
+        "message": "Delete role %s success",
+        "error_code": 0,
+        "data": [
+            {
+                "task_event": {
+                    'task_event_id': "c8f044f9-b2fb-49fd-ace4-45d7c740d828",
+                    'status': 'success',
+                    'type': 'delete'
+                }
+            }, {
+                "project": role
+            }
+        ]
+    }
+
+    return jsonify(response)

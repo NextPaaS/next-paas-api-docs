@@ -83,7 +83,7 @@ def create_app():
     from src.api.project import listProject, getProject, getUserProject, updateProject, deleteProject, createProject
     from src.api.healthCheck import healthCheck
     from src.api.taskEventId import getTaskEvent
-    from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser
+    from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser, getProjectsOfUser
     from src.api.role import createRole, getRole, updateRole, listRole, deleteRole
 
     with app.test_request_context():
@@ -97,6 +97,7 @@ def create_app():
         spec.path(view=updateProject)
         spec.path(view=deleteProject)
         spec.path(view=listUser)
+        spec.path(view=getProjectsOfUser)
         spec.path(view=getUser)
         spec.path(view=inviteUser)
         spec.path(view=updateUser)

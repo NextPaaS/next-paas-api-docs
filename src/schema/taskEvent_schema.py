@@ -1,10 +1,11 @@
 from marshmallow import Schema, fields
 from .utils import *
+from .role_schema import RoleSchema
 
 class TaskEvent(Schema):
     task_event_id = fields.Str(metadata={"format": "uuid"})
     type = fields.Str()
-    status = fields.Str()
+    status = fields.Str(metadata={"format": "string", "example": "Success"})
 
 
 class TaskEventResponse(Schema):
@@ -65,3 +66,14 @@ class TaskEventDeleteProjectResponse(Schema):
     message = fields.Str()
     error_code = fields.Int()
     data = fields.Nested(TaskEventDeleteProject)
+
+
+class TaskEventDeleteRole(Schema):
+    task_event = fields.Nested(TaskEvent)
+    role = fields.Nested(RoleSchema)
+
+class TaskEventDeleteRoleResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str(metadata={"format": "string", "example": "Delete role %s successfully"})
+    error_code = fields.Int()
+    data = fields.Nested(TaskEventDeleteRole)
