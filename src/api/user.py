@@ -496,7 +496,15 @@ def getProjectsOfUser(user_uuid):
         "success": True,
         "message": "get users %s of project %s success",
         "error_code": 0,
-        "data": data
+        "data": data,
+        "metadata": {
+            "total": 9,
+            "current_page": 1,
+            "has_next": False,
+            "has_previous": None,
+            "previous_page": None,
+            "next_page": None
+        }
     }
     return jsonify(response)
 
