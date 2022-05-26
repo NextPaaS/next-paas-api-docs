@@ -27,13 +27,6 @@ def listRole():
                 required: true
                 schema:
                     type: string
-            -   name: project_uuid
-                in: path
-                description: project_uuid
-                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
-                required: true
-                schema:
-                    type: string
             -   name: role
                 in: query
                 schema:
