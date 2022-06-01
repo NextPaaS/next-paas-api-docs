@@ -85,6 +85,7 @@ def create_app():
     from src.api.taskEventId import getTaskEvent
     from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser, getProjectsOfUser
     from src.api.role import createRole, getRole, updateRole, listRole, deleteRole
+    from src.api.permission import listResource
 
     with app.test_request_context():
         spec.path(view=healthCheck)
@@ -107,6 +108,7 @@ def create_app():
         spec.path(view=createRole)
         spec.path(view=updateRole)
         spec.path(view=deleteRole)
+        spec.path(view=listResource)
 
     @app.route('/docs')
     @app.route('/docs/<path:path>')
