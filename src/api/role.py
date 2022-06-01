@@ -1,11 +1,11 @@
 import logging
 import sys
+import uuid
 from src.api import bp
 from src.schema.error_schema import *
 from src.schema.taskEvent_schema import *
 from src.schema.role_schema import *
 from flask import jsonify, request
-import uuid
 
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -201,13 +201,13 @@ def listRole():
 
 @bp.route('/role/create', methods=["POST"])
 def createRole():
-    """create role CHUA CO MOCK API
+    """create role
     ---
     post:
-        summary: create role CHUA CO MOCK API
+        summary: create role
         tags:
             - Roles
-        description: create role CHUA CO MOCK API
+        description: create role
         parameters:
             -   name: cookie
                 in: header
@@ -216,13 +216,17 @@ def createRole():
                 required: true
                 schema:
                     type: string
+        requestBody:
+            content:
+                application/json:
+                    schema: CreateRoleSchema
 
         responses:
             200:
                 description: Success response
                 content:
                     application/json:
-                        schema: 
+                        schema: CreateRoleSchemaResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -254,7 +258,69 @@ def createRole():
                     application/json:
                         schema: DefaultError
     """
-    pass
+    req = request.get_json()
+    try:
+        name = req['name']
+        description = req['description']
+        permissions = req['permissions']
+        version = req['version']
+        if req['version'] != "1.0.0":
+            response = {
+                'success': False,
+                'error_code': 417,
+                'message': 'Invalid version'
+            }
+            logging.info(e)
+            return jsonify(response)
+    except Exception as e:
+        response = {
+            'success': False,
+            'error_code': 417,
+            'message': 'Invalid body request'
+        }
+        logging.info(e)
+        return jsonify(response)
+    per = []
+    try :
+        for permission in permissions:
+            effect = permission['effect']
+            for action in permission['action']:
+                for resource in permission['resources']:
+                    endpoint = f"{resource}.{action}"
+                    per.append(endpoint)
+                    logging.info(f"endpoint: {endpoint}, action: {effect}")
+    except Exception as e:
+        response = {
+            'success': False,
+            'error_code': 417,
+            'message': 'Invalid body request'
+        }
+        logging.info(e)
+        return jsonify(response)
+    data = {
+        "task_event": {
+            "task_event_id": uuid.uuid4(),
+            "status": "success",
+            "type": "create",
+        },
+        "role": {
+            "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "name": name,
+            "description": description,
+            "is_custom": True,
+            "is_active": True,
+            "created_at": "2022-06-01T08:48:45.351Z",
+            "updated_at": None,
+            "deleted_at": None,
+        }
+    }
+    response = {
+        "success": True,
+        "message": "Create role %s success",
+        "error_code": 0,
+        "data": data
+    }
+    return jsonify(response)
 
 
 @bp.route('/role/<uuid:role_uuid>', methods=["GET"])
@@ -556,15 +622,15 @@ def getRole(role_uuid):
     return jsonify(response)
 
 
-@bp.route('/role/update/<uuid:role_uuid>', methods=["GET"])
+@bp.route('/role/update/<uuid:role_uuid>', methods=["PUT"])
 def updateRole(role_uuid):
-    """update role CHUA CO MOCK API
+    """update role
     ---
     put:
-        summary: update role CHUA CO MOCK API
+        summary: update role
         tags:
             - Roles
-        description: update role CHUA CO MOCK API
+        description: update role
         parameters:
             -   name: cookie
                 in: header
@@ -575,19 +641,23 @@ def updateRole(role_uuid):
                     type: string
             -   name: role_uuid
                 in: path
-                description: role_uuid
-                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
+                description: role uuid
+                example: da28fd31-4f48-4c27-a478-2b6e917717b5
                 required: true
                 schema:
                     type: string
                     format: uuid
+        requestBody:
+            content:
+                application/json:
+                    schema: CreateRoleSchema
 
         responses:
             200:
                 description: Success response
                 content:
                     application/json:
-                        schema: 
+                        schema: UpdateRoleSchemaResponse
             401:
                 description: Access token is missing or invalid
                 content:
@@ -619,10 +689,83 @@ def updateRole(role_uuid):
                     application/json:
                         schema: DefaultError
     """
-    pass
+    req = request.get_json()
+    try:
+        name = req['name']
+        description = req['description']
+        permissions = req['permissions']
+        version = req['version']
+        if version != "1.0.0":
+            response = {
+                'success': False,
+                'error_code': 417,
+                'message': 'Invalid version'
+            }
+            logging.info(e)
+            return jsonify(response)
+    except Exception as e:
+        response = {
+            'success': False,
+            'error_code': 417,
+            'message': 'Invalid body request'
+        }
+        logging.info(e)
+        return jsonify(response)
+    per = []
+    try :
+        for permission in permissions:
+            effect = permission['effect']
+            for action in permission['action']:
+                for resource in permission['resources']:
+                    endpoint = f"{resource}.{action}"
+                    per.append(endpoint)
+                    logging.info(f"endpoint: {endpoint}, action: {effect}")
+    except Exception as e:
+        response = {
+            'success': False,
+            'error_code': 417,
+            'message': 'Invalid body request'
+        }
+        logging.info(e)
+        return jsonify(response)
+    data = {
+        "task_event": {
+            "task_event_id": uuid.uuid4(),
+            "status": "success",
+            "type": "update",
+        },
+        "role": {
+            "before_values": {
+                "uuid": role_uuid,
+                "name": "old name",
+                "description": "old description",
+                "is_custom": True,
+                "is_active": True,
+                "created_at": "2022-06-01T08:48:45.351Z",
+                "updated_at": None,
+                "deleted_at": None,
+            }, "after_values": {
+                "uuid": role_uuid,
+                "name": name,
+                "description": description,
+                "is_custom": True,
+                "is_active": True,
+                "created_at": "2022-06-01T08:48:45.351Z",
+                "updated_at": "2022-06-02T08:48:45.351Z",
+                "deleted_at": None,
+            }
+        }
+    }
+    response = {
+        "success": True,
+        "message": "update role %s success",
+        "error_code": 0,
+        "data": data
+    }
+    return jsonify(response)
 
 
-@bp.route('/role/<uuid:role_uuid>', methods=["DELETE"])
+@bp.route('/role/delete/<uuid:role_uuid>', methods=["DELETE"])
 def deleteRole(role_uuid):
     """delete role
     ---

@@ -238,7 +238,7 @@ def listResource():
 
     response = {
         "success": True,
-        "message": "list users with projects success",
+        "message": "list resource success",
         "error_code": 0,
         "data": data,
         "metadata": {
