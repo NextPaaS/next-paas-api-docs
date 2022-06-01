@@ -10,3 +10,10 @@ class PermissionSchema(Schema):
     is_active = fields.Boolean()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
+
+
+class PermissionCreateSchema(Schema):
+    effect = fields.Str(metadata={"example": "allow"})
+    action = (fields.Str(metadata={"example": ("create", "delete")}))
+    resources = fields.Str(metadata={"example": ("iaas-cloud.servers", "iaas-cloud.volumes")})
+    conditions = fields.Nested(Schema)

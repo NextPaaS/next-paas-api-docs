@@ -72,6 +72,29 @@ class TaskEventDeleteRole(Schema):
     task_event = fields.Nested(TaskEvent)
     role = fields.Nested(RoleSchema)
 
+
+
+class CreateRoleSchemaResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEventDeleteRole)
+
+
+class ValueRoleSchema(Schema):
+    before_values = fields.Nested(RoleSchema)
+    after_values = fields.Nested(RoleSchema)
+
+class TaskEventUpdateRole(Schema):
+    task_event = fields.Nested(TaskEvent)
+    role = fields.Nested(ValueRoleSchema)
+
+
+class UpdateRoleSchemaResponse(Schema):
+    success = fields.Boolean()
+    message = fields.Str()
+    error_code = fields.Int()
+    data = fields.Nested(TaskEventUpdateRole)
 class TaskEventDeleteRoleResponse(Schema):
     success = fields.Boolean()
     message = fields.Str(metadata={"format": "string", "example": "Delete role %s successfully"})

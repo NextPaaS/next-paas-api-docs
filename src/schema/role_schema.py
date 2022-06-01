@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields
 from .utils import *
 from .resource_schema import ResourceSchema
-from .permission import PermissionSchema
+from .permission import PermissionSchema, PermissionCreateSchema
 
 
 class RoleSchema(Schema):
@@ -32,8 +32,8 @@ class GetRoleSchemaResponse(Schema):
     data = fields.Nested(FullInfoRole)
 
 
-class CreateRoleSchemaResponse(Schema):
-    success = fields.Boolean()
-    message = fields.Str()
-    error_code = fields.Int()
-    data = fields.Nested(PermissionSchema)
+class CreateRoleSchema(Schema):
+    version = fields.Str(metadata={"example": "1.0.0"})
+    name = fields.Str()
+    description = fields.Str()
+    permissions = fields.List(fields.Nested(PermissionCreateSchema))
