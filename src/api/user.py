@@ -587,7 +587,7 @@ def updateUser(user_uuid):
     }
     return jsonify(response)
 
-@bp.route('/user/delete/<uuid:user_uuid>', methods=["DELETE"])
+@bp.route('/user/detach', methods=["DELETE"])
 def deleteUser(user_uuid):
     """delete user from project
     ---
@@ -604,18 +604,10 @@ def deleteUser(user_uuid):
                 required: true
                 schema:
                     type: string
-            -   name: user_uuid
-                in: path
-                description: user_uuid
-                example: b0a6dc1e-dda8-4562-b62c-007bb7993f25
-                required: true
-                schema:
-                    type: string
-                    format: uuid
         requestBody:
             content:
                 application/json:
-                    schema: GetProjectSchema
+                    schema: InviteUser
 
         responses:
             200:
