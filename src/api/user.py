@@ -415,7 +415,7 @@ def getProjectsOfUser(user_uuid):
                 description: Response success
                 content:
                     application/json:
-                        schema: ListProjectOfUser
+                        schema: ListProjectUser
             401:
                 description: Access token is missing or invalid
                 content:
@@ -607,7 +607,7 @@ def deleteUser(user_uuid):
         requestBody:
             content:
                 application/json:
-                    schema: InviteUser
+                    schema: DetachUser
 
         responses:
             200:

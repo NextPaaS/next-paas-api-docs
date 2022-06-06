@@ -23,8 +23,8 @@ class ListTaskEventResponse(Schema):
 
 
 class PayloadCreateProject(Schema):
-    user_uuid = fields.Str(metadata={"format": "uuid", "required": "true"})
-    user_email = fields.Str(metadata={"format": "email"})
+    # user_uuid = fields.Str(metadata={"format": "uuid", "required": "true"})
+    # user_email = fields.Str(metadata={"format": "email"})
     project_name = fields.Str()
     description = fields.Str()
 

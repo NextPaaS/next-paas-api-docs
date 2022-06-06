@@ -45,7 +45,7 @@ class ProjectOfUser(Schema):
     projects = fields.List(fields.Nested(ProjectSchemaWithRole))
     user = fields.Nested(UserOfProject)
 
-class ListProjectOfUser(Schema):
+class ListProjectUser(Schema):
     success = fields.Boolean()
     message = fields.Str()
     error_code = fields.Int()
@@ -82,9 +82,12 @@ class InviteUser(Schema):
     role_uuid = fields.Str(metadata={"format": "uuid"})
 
 
+class DetachUser(Schema):
+    project_uuid = fields.Str(metadata={"format": "uuid"})
+    email = fields.Str(metadata={"format": "email"})
+
 class UpdateUserInProject(Schema):
     project_uuid = fields.Str(metadata={"format": "uuid"})
-    user_uuid = fields.Str(metadata={"format": "uuid"})
     role_uuid = fields.Str(metadata={"format": "uuid"})
 
 
