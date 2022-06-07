@@ -49,5 +49,5 @@ class ListResourceSchemaResponse(Schema):
     success = fields.Boolean()
     message = fields.Str()
     error_code = fields.Int()
-    data = fields.List(fields.Nested(SubResourceSchema))
+    data = fields.List(fields.Nested(ResourceSchema))
     metadata = fields.Nested(Metadata)
