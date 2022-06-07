@@ -410,6 +410,49 @@ def getProjectsOfUser(user_uuid):
                 schema:
                     type: string
                     format: uuid
+            -   name: project_name
+                in: query
+                schema:
+                    type: string
+                description: filter based on project_name
+            -   name: sortField
+                in: query
+                schema:
+                    type: string
+                    enum: [project_name, role]
+                description: sort field 
+            -   name: sort
+                in: query
+                schema:
+                    type: string
+                    enum: [asc, desc]
+                description: >
+                    Sort order:
+                        * `project_name:asc` - Ascending, from A to Z
+                        * `project_name:desc` - Descending, from Z to A
+                        * `role:asc` - Ascending, from A to Z
+                        * `role:desc` - Descending, from Z to A
+            -   name: limit
+                in: query
+                description: How many items to return at one time (max 100)
+                required: false
+                schema:
+                    type: integer
+                    format: int32
+            -   name: page
+                in: query
+                description: specific page that reach to
+                required: false
+                schema:
+                    type: integer
+                    format: int32
+            -   name: offset
+                in: query
+                description: specific size page that want
+                required: false
+                schema:
+                    type: integer
+                    format: int32
         responses:
             200:
                 description: Response success
@@ -588,7 +631,7 @@ def updateUser(user_uuid):
     return jsonify(response)
 
 @bp.route('/user/detach', methods=["DELETE"])
-def deleteUser(user_uuid):
+def deleteUser():
     """delete user from project
     ---
     delete:
@@ -648,9 +691,10 @@ def deleteUser(user_uuid):
     """
     req = request.get_json()
     project_uuid = req["project_uuid"]
+    email = req["email"]
     response = {
         "success": True,
-        "message": "Detach user %s from project %s successfully" % (user_uuid, project_uuid),
+        "message": "Detach user %s from project %s successfully" % (email, project_uuid),
         "error_code": 0,
     }
     return jsonify(response)
