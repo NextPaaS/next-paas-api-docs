@@ -32,23 +32,6 @@ def listResource():
                 schema:
                     type: string
                 description: service name
-            # -   name: sortField
-            #     in: query
-            #     schema:
-            #         type: string
-            #         enum: [email, createdAt]
-            #     description: sort field 
-            # -   name: sort
-            #     in: query
-            #     schema:
-            #         type: string
-            #         enum: [asc, desc]
-            #     description: >
-            #         Sort order:
-            #             * `email:asc` - Ascending, from A to Z
-            #             * `email:desc` - Descending, from Z to A
-            #             * `createdAt:asc` - Ascending, from A to Z
-            #             * `createdAt:desc` - Descending, from Z to A
             -   name: limit
                 in: query
                 description: How many items to return at one time (max 100)
@@ -108,133 +91,192 @@ def listResource():
                         schema: DefaultError
     """
     data = [
-            {
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm7",
-                "name": "chua nghi ra",
-                "type": "Get",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.servers.*",
-                "description": "toan quyen voi server",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },
-            {
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm8",
-                "name": "",
-                "type": "Create",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.servers.create",
-                "description": "co quyen tao server",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },
-            {
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
-                "name": "",
-                "type": "Get",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.servers.details",
-                "description": "co quyen xem chi tiet server",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },{
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
-                "name": "",
-                "type": "Get",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.servers.delete",
-                "description": "co quyen xoa server",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },{
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
-                "name": "",
-                "type": "Get",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.servers.update",
-                "description": "co quyen update server",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },
-            {
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm6",
-                "name": "",
-                "type": "Get",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.volumes.*",
-                "description": "toan quyen voi volumes",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },
-            {
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
-                "name": "",
-                "type": "Create",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.volumes.create",
-                "description": "co quyen tao volumne",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },
-            {
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
-                "name": "",
-                "type": "Create",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.volumes.update",
-                "description": "co quyen update volumne",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },{
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
-                "name": "",
-                "type": "Create",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.volumes.delete",
-                "description": "co quyen xoa volumne",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            },{
-                "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
-                "name": "",
-                "type": "Create",
-                "service_type": "infra",
-                "service_name": "Cloud server",
-                "endpoint": "iaas-cloud.volumes.details",
-                "description": "co quyen xem chi tiet volumne",
-                "is_active": True,
-                "created_at": "2022-04-26T02:51:40.905Z",
-                "updated_at": None,
-                "deleted_at": None,
-            }
-        ]
+        {
+            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffmf",
+            "name": "chua nghi ra",
+            "type": "Get",
+            "service_type": "infra",
+            "service_name": "Nen tang nhu mot dich vu",
+            "endpoint": "iaas-cloud.*",
+            "description": "toan quyen voi server",
+            "is_active": True,
+            "created_at": "2022-04-26T02:51:40.905Z",
+            "updated_at": None,
+            "deleted_at": None,
+            "sub_resources": [
+                {
+                    "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm7",
+                    "name": "chua nghi ra",
+                    "type": "Get",
+                    "service_type": "infra",
+                    "service_name": "Cloud server",
+                    "endpoint": "iaas-cloud.servers.*",
+                    "description": "toan quyen voi server",
+                    "is_active": True,
+                    "created_at": "2022-04-26T02:51:40.905Z",
+                    "updated_at": None,
+                    "deleted_at": None,
+                    "sub_resources": [
+                        {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm8",
+                            "name": "",
+                            "type": "Create",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.servers.create",
+                            "description": "co quyen tao server",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        },
+                        {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
+                            "name": "",
+                            "type": "Get",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.servers.details",
+                            "description": "co quyen xem chi tiet server",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        }, {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
+                            "name": "",
+                            "type": "Get",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.servers.delete",
+                            "description": "co quyen xoa server",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        }, {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm9",
+                            "name": "",
+                            "type": "Get",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.servers.update",
+                            "description": "co quyen update server",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        },
+                    ]
+                },
+                {
+                    "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm6",
+                    "name": "",
+                    "type": "Get",
+                    "service_type": "infra",
+                    "service_name": "Cloud server",
+                    "endpoint": "iaas-cloud.volumes.*",
+                    "description": "toan quyen voi volumes",
+                    "is_active": True,
+                    "created_at": "2022-04-26T02:51:40.905Z",
+                    "updated_at": None,
+                    "deleted_at": None,
+                    "sub_resource": [
+                        {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
+                            "name": "",
+                            "type": "Create",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.volumes.create",
+                            "description": "co quyen tao volumne",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        },
+                        {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
+                            "name": "",
+                            "type": "Create",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.volumes.update",
+                            "description": "co quyen update volumne",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        }, {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
+                            "name": "",
+                            "type": "Create",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.volumes.delete",
+                            "description": "co quyen xoa volumne",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        }, {
+                            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm3",
+                            "name": "",
+                            "type": "Create",
+                            "service_type": "infra",
+                            "service_name": "Cloud server",
+                            "endpoint": "iaas-cloud.volumes.details",
+                            "description": "co quyen xem chi tiet volumne",
+                            "is_active": True,
+                            "created_at": "2022-04-26T02:51:40.905Z",
+                            "updated_at": None,
+                            "deleted_at": None,
+                        }
+                    ]
+                },
+            ]
+        },
+        {
+            "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffmf",
+            "name": "chua nghi ra",
+            "type": "Get",
+            "service_type": "infra",
+            "service_name": "bizflydriver",
+            "endpoint": "cloud-storage.*",
+            "description": "toan quyen voi server",
+            "is_active": True,
+            "created_at": "2022-04-26T02:51:40.905Z",
+            "updated_at": None,
+            "deleted_at": None,
+            "sub_resources": [
+                {
+                    "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm7",
+                    "name": "chua nghi ra",
+                    "type": "Post",
+                    "service_type": "infra",
+                    "service_name": "bizflydriver",
+                    "endpoint": "cloud-storage.create",
+                    "description": "tao bizflydriver",
+                    "is_active": True,
+                    "created_at": "2022-04-26T02:51:40.905Z",
+                    "updated_at": None,
+                    "deleted_at": None,
+                },{
+                    "uuid": "9be65172-e1d6-4e61-95ed-d35d92eeffm7",
+                    "name": "chua nghi ra",
+                    "type": "Get",
+                    "service_type": "infra",
+                    "service_name": "bizflydriver",
+                    "endpoint": "cloud-storage.drive",
+                    "description": "get list drive",
+                    "is_active": True,
+                    "created_at": "2022-04-26T02:51:40.905Z",
+                    "updated_at": None,
+                    "deleted_at": None,
+                }
+            ]
+        }
+    ]
 
     response = {
         "success": True,
