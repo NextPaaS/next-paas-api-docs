@@ -86,6 +86,7 @@ def create_app():
     from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser, getProjectsOfUser
     from src.api.role import createRole, getRole, updateRole, listRole, deleteRole
     from src.api.permission import listResource
+    from src.api.app import getAppInfo, getAppPlan, getBindVolume
 
     with app.test_request_context():
         spec.path(view=healthCheck)
@@ -109,13 +110,16 @@ def create_app():
         spec.path(view=updateRole)
         spec.path(view=deleteRole)
         spec.path(view=listResource)
+        spec.path(view=getAppInfo)
+        spec.path(view=getAppPlan)
+        spec.path(view=getBindVolume)
 
     @app.route('/docs')
     @app.route('/docs/<path:path>')
 #    @app.route('/<path:uri>/docs/<path:path>')
     def swagger_docs(uri=None, path=None):
         if not path or path == 'index.html':
-            return render_template('index.html', base_url=f"/api/iam/v2/docs")
+            return render_template('index.html', base_url=f"/docs")
 #            if uri == None:
 #                return render_template('index.html', base_url=f"/docs")
 #            else:
