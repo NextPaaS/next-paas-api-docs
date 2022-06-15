@@ -7,7 +7,7 @@ from apispec.utils import validate_spec
 from apispec.ext.marshmallow import MarshmallowPlugin
 from apispec_webframeworks.flask import FlaskPlugin
 from flask import Flask, jsonify, render_template, send_from_directory
-from src.api.taskEventId import listTaskEvent
+
 from flask_cors import CORS
 
 env = os.getenv("ENV", "development")
@@ -80,39 +80,35 @@ def create_app():
     from src.api import bp
     app.register_blueprint(bp)
 
-    from src.api.project import listProject, getProject, getUserProject, updateProject, deleteProject, createProject
+    # from src.api.project import listProject, getProject, getUserProject, updateProject, deleteProject, createProject
     from src.api.healthCheck import healthCheck
-    from src.api.taskEventId import getTaskEvent
-    from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser, getProjectsOfUser
-    from src.api.role import createRole, getRole, updateRole, listRole, deleteRole
-    from src.api.permission import listResource
-    from src.api.app import getAppInfo, getAppPlan, getBindVolume
+    # from src.api.taskEventId import getTaskEvent
+    # from src.api.user import listUser, inviteUser, getUser, updateUser, deleteUser, getProjectsOfUser
+    # from src.api.role import createRole, getRole, updateRole, listRole, deleteRole
+    # from src.api.permission import listResource
+    from src.api.app import getAppInfo, getAppPlan, getBindVolume, getAppUnits, getAppAutoscale, getAppEnv, volume, createApp, stopApp, restartApp, startApp, deleteApp, rollbackApp, deployApp, logApp, eventApp
+    from src.api.app_service import serviceInfo, BindService
 
     with app.test_request_context():
         spec.path(view=healthCheck)
-        spec.path(view=listTaskEvent)
-        spec.path(view=getTaskEvent)
-        spec.path(view=listProject)
-        spec.path(view=getProject)
-        spec.path(view=getUserProject)
-        spec.path(view=createProject)
-        spec.path(view=updateProject)
-        spec.path(view=deleteProject)
-        spec.path(view=listUser)
-        spec.path(view=getProjectsOfUser)
-        spec.path(view=getUser)
-        spec.path(view=inviteUser)
-        spec.path(view=updateUser)
-        spec.path(view=deleteUser)
-        spec.path(view=listRole)
-        spec.path(view=getRole)
-        spec.path(view=createRole)
-        spec.path(view=updateRole)
-        spec.path(view=deleteRole)
-        spec.path(view=listResource)
         spec.path(view=getAppInfo)
+        spec.path(view=logApp)
+        spec.path(view=eventApp)
+        spec.path(view=createApp)
+        spec.path(view=deployApp)
+        spec.path(view=stopApp)
+        spec.path(view=restartApp)
+        spec.path(view=startApp)
+        spec.path(view=deleteApp)
+        spec.path(view=rollbackApp)
         spec.path(view=getAppPlan)
+        spec.path(view=getAppUnits)
+        spec.path(view=getAppAutoscale)
         spec.path(view=getBindVolume)
+        spec.path(view=getAppEnv)
+        spec.path(view=volume)
+        spec.path(view=serviceInfo)
+        spec.path(view=BindService)
 
     @app.route('/docs')
     @app.route('/docs/<path:path>')
