@@ -16,6 +16,7 @@ def create_app():
     app = Flask(__name__, template_folder='../templates', static_folder='../static')
     app.config['JSON_SORT_KEYS'] = False
     CORS(app, origins=[
+            "http://192.168.18.178:9997",
 			"https://staging.bizflycloud.vn",
             "https://staging2.bizflycloud.vn",
             "https://dev-iam.bizflycloud.vn",
@@ -54,7 +55,7 @@ def create_app():
 
     settings = yaml.safe_load(OPENAPI_SPEC)
     spec = APISpec(
-        title='OpenAPI for iam v2 public api',
+        title='NextPaaS API Document',
         version='1.0.0',
         openapi_version='3.0.2',
         plugins=[FlaskPlugin(), MarshmallowPlugin()],
@@ -64,13 +65,12 @@ def create_app():
     @app.route('/')
     def introduce():
         return jsonify({
-            "auth": "Thifnmi",
-            "full name": "Tu Van Thin",
+            "auth": "Viet",
+            "full name": "Nguyen Hoang Viet",
             "email": {
-                "VCCorp": "thintuvan@vccorp.vn",
-                "VCCloud": "thintv@vccloud.vn"
+                "VCCorp": "vietnguyenhoang@vccorp.vn"
             },
-            "telegram": "@Thifnmi"
+            "telegram": "@HoangViet12"
         })
 
     @app.route('/api-docs')
@@ -88,6 +88,9 @@ def create_app():
     # from src.api.permission import listResource
     from src.api.app import getAppInfo, getAppPlan, getBindVolume, getAppUnits, getAppAutoscale, getAppEnv, volume, createApp, stopApp, restartApp, startApp, deleteApp, rollbackApp, deployApp, logApp, eventApp
     from src.api.app_service import serviceInfo, BindService
+    from src.api.user import getUserInfo, userProject
+    from src.api.project import ProjectInfo
+    from src.api.pool import pool
 
     with app.test_request_context():
         spec.path(view=healthCheck)
@@ -109,6 +112,10 @@ def create_app():
         spec.path(view=volume)
         spec.path(view=serviceInfo)
         spec.path(view=BindService)
+        spec.path(view=getUserInfo)
+        spec.path(view=userProject)
+        spec.path(view=ProjectInfo)
+        spec.path(view=pool)
 
     @app.route('/docs')
     @app.route('/docs/<path:path>')

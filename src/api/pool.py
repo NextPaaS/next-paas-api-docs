@@ -4,22 +4,23 @@ import sys
 from src.api import bp
 from src.schema.error_schema import *
 from src.schema.taskEvent_schema import *
-from src.schema.role_schema import *
+from src.schema.user_schema import *
 from src.schema.success_schema import *
 from flask import jsonify, request
 
+
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
-@bp.route('/app/service', methods=["GET"])
-def serviceInfo():
+@bp.route('/pool', methods=["GET", "POST", "PUT","DELETE"])
+def pool():
     """
-    Services is database or broker
+    Custom pool allow user can deploy in any place
     ---
     get:
-        summary: Get all services
+        summary: Get all pools of user
         tags:
-        - Apps
-        description: Get all services
+            - Pool
+        description: Get all pools of user
         parameters:
             -   name: cookie
                 in: header
@@ -33,7 +34,7 @@ def serviceInfo():
                 description: Success Response
                 content:
                     application/json:
-                        schema: ListServiceSchema
+                        schema: ListPool
             401:
                 description: Access token is missing or invalid
                 content:
@@ -43,7 +44,7 @@ def serviceInfo():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -54,64 +55,12 @@ def serviceInfo():
                 content:
                     application/json:
                         schema: ServerError
-    """
-
-@bp.route('/app/service/bind', methods=["GET,POST,DELETE"])
-def BindService():
-    """
-    Create a service and bind into application
-    ---
-    get:
-        summary: Get services already bind to an Application
-        tags:
-        - Apps
-        description: Get services already bind to an Application
-        parameters:
-            -   name: cookie
-                in: header
-                description: cookie for authentication
-                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
-                required: true
-                schema:
-                    type: string
-            -   name: app
-                in: query
-                description: Name of application
-                example: python-application
-                required: true
-                schema:
-                    type: string
-        responses:
-            200:
-                description: Success Response
-                content:
-                    application/json:
-                        schema: ListServiceSchema
-            401:
-                description: Access token is missing or invalid
-                content:
-                    application/json:
-                        schema: UnauthorizedError
-            403:
-                description: Permission Deny
-                content:
-                    application/json:
-                        schema: PermissionDeny
-            404:
-                description: Application Not Found
-                content:
-                    application/json:
-                        schema: PageNotFound
-            500:
-                description: Server Error
-                content:
-                    application/json:
-                        schema: ServerError
+        
     post:
-        summary: Create service and bind to application
+        summary: Create pool
         tags:
-        - Apps
-        description: Create service and bind to application
+            - Pool
+        description: Create pool
         parameters:
             -   name: cookie
                 in: header
@@ -120,34 +69,25 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app_name
+            -   name: pool_name
                 in: query
-                description: Name of application
-                example: python-application
+                description: name of the pool
                 required: true
                 schema:
                     type: string
-            -   name: service_name
+            -   name: address
                 in: query
-                description: Name of service
-                example: mysql-production
+                description: Address of the pool
                 required: true
                 schema:
                     type: string
-            -   name: servicetype
+            -   name: default
                 in: query
-                description: type of services
-                example: mysql
+                description: set as a default pool
                 required: true
                 schema:
-                    type: string
-            -   name: service_plan
-                in: query
-                description: Plan of services
-                example: 1c_1g
-                required: true
-                schema:
-                    type: string
+                    type: boolean
+
         responses:
             200:
                 description: Success Response
@@ -163,7 +103,63 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
+            404:
+                description: Application Not Found
+                content:
+                    application/json:
+                        schema: PageNotFound
+            500:
+                description: Server Error
+                content:
+                    application/json:
+                        schema: ServerError
+
+    put:
+        summary: Update pool
+        tags:
+            - Pool
+        description: Update pool
+        parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
+                required: true
+                schema:
+                    type: string
+            -   name: pool_name
+                in: query
+                description: name of the pool
+                schema:
+                    type: string
+            -   name: address
+                in: query
+                description: Address of the pool
+                schema:
+                    type: string
+            -   name: default
+                in: query
+                description: set as a default pool
+                schema:
+                    type: boolean
+
+        responses:
+            200:
+                description: Success Response
+                content:
+                    application/json:
+                        schema: DefaultSuccess
+            401:
+                description: Access token is missing or invalid
+                content:
+                    application/json:
+                        schema: UnauthorizedError
+            403:
+                description: Permission Deny
+                content:
+                    application/json:
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -176,10 +172,10 @@ def BindService():
                         schema: ServerError
 
     delete:
-        summary: Delete service
+        summary: Create pool
         tags:
-        - Apps
-        description: Delete service
+            - Pool
+        description: Create pool
         parameters:
             -   name: cookie
                 in: header
@@ -188,20 +184,13 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app
+            -   name: pool_name
                 in: query
-                description: Name of application
-                example: python-application
+                description: name of the pool
                 required: true
                 schema:
                     type: string
-            -   name: service_name
-                in: query
-                description: Name of volume
-                example: mysql-production
-                required: true
-                schema:
-                    type: string
+
         responses:
             200:
                 description: Success Response
@@ -217,7 +206,7 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:

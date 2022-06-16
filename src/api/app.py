@@ -863,7 +863,7 @@ def getAppEnv():
     """
 
 
-@bp.route('/app/resource/unit', methods=["GET","POST"])
+@bp.route('/app/resource/unit', methods=["GET","PUT"])
 def getAppUnits():
     """
     Get all units of an Application
@@ -913,7 +913,7 @@ def getAppUnits():
                 content:
                     application/json:
                         schema: ServerError
-    post:
+    put:
         summary: Update number of units in application
         tags:
         - Apps

@@ -4,68 +4,24 @@ import sys
 from src.api import bp
 from src.schema.error_schema import *
 from src.schema.taskEvent_schema import *
-from src.schema.role_schema import *
+from src.schema.user_schema import *
 from src.schema.success_schema import *
 from flask import jsonify, request
 
+
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
-@bp.route('/app/service', methods=["GET"])
-def serviceInfo():
-    """
-    Services is database or broker
-    ---
-    get:
-        summary: Get all services
-        tags:
-        - Apps
-        description: Get all services
-        parameters:
-            -   name: cookie
-                in: header
-                description: cookie for authentication
-                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
-                required: true
-                schema:
-                    type: string
-        responses:
-            200:
-                description: Success Response
-                content:
-                    application/json:
-                        schema: ListServiceSchema
-            401:
-                description: Access token is missing or invalid
-                content:
-                    application/json:
-                        schema: UnauthorizedError
-            403:
-                description: Permission Deny
-                content:
-                    application/json:
-                        schema: PermissionDeny
-            404:
-                description: Application Not Found
-                content:
-                    application/json:
-                        schema: PageNotFound
-            500:
-                description: Server Error
-                content:
-                    application/json:
-                        schema: ServerError
-    """
 
-@bp.route('/app/service/bind', methods=["GET,POST,DELETE"])
-def BindService():
+@bp.route('/project', methods=["GET", "PUT", "POST", "DELETE"])
+def ProjectInfo():
     """
-    Create a service and bind into application
+    Get all projects of user 
     ---
     get:
-        summary: Get services already bind to an Application
+        summary: Get all projects of user 
         tags:
-        - Apps
-        description: Get services already bind to an Application
+            - Project
+        description: Get all projects of user 
         parameters:
             -   name: cookie
                 in: header
@@ -74,19 +30,12 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app
-                in: query
-                description: Name of application
-                example: python-application
-                required: true
-                schema:
-                    type: string
         responses:
             200:
                 description: Success Response
                 content:
                     application/json:
-                        schema: ListServiceSchema
+                        schema: ListProject
             401:
                 description: Access token is missing or invalid
                 content:
@@ -96,7 +45,7 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -107,11 +56,12 @@ def BindService():
                 content:
                     application/json:
                         schema: ServerError
-    post:
-        summary: Create service and bind to application
+    
+    put:
+        summary: Update information of project
         tags:
-        - Apps
-        description: Create service and bind to application
+            - Project
+        description:  Update information of project
         parameters:
             -   name: cookie
                 in: header
@@ -120,31 +70,65 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app_name
+            -   name: project_name
                 in: query
-                description: Name of application
-                example: python-application
+                description: Name of project
+                schema:
+                    type: string
+            -   name: project_description
+                in: query
+                description: Description of project
+                schema:
+                    type: string
+        responses:
+            200:
+                description: Success Response
+                content:
+                    application/json:
+                        schema: DefaultSuccess
+            401:
+                description: Access token is missing or invalid
+                content:
+                    application/json:
+                        schema: UnauthorizedError
+            403:
+                description: Permission Deny
+                content:
+                    application/json:
+                        schema: UnauthorizedError
+            404:
+                description: Application Not Found
+                content:
+                    application/json:
+                        schema: PageNotFound
+            500:
+                description: Server Error
+                content:
+                    application/json:
+                        schema: ServerError
+
+    post:
+        summary: Create project
+        tags:
+            - Project
+        description:  create project
+        parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
                 required: true
                 schema:
                     type: string
-            -   name: service_name
+            -   name: project_name
                 in: query
-                description: Name of service
-                example: mysql-production
+                description: Name of project
                 required: true
                 schema:
                     type: string
-            -   name: servicetype
+            -   name: project_description
                 in: query
-                description: type of services
-                example: mysql
-                required: true
-                schema:
-                    type: string
-            -   name: service_plan
-                in: query
-                description: Plan of services
-                example: 1c_1g
+                description: Description of project
                 required: true
                 schema:
                     type: string
@@ -163,7 +147,7 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -176,10 +160,10 @@ def BindService():
                         schema: ServerError
 
     delete:
-        summary: Delete service
+        summary: Delete project
         tags:
-        - Apps
-        description: Delete service
+            - Project
+        description:  Delete project
         parameters:
             -   name: cookie
                 in: header
@@ -188,17 +172,9 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app
+            -   name: project_name
                 in: query
-                description: Name of application
-                example: python-application
-                required: true
-                schema:
-                    type: string
-            -   name: service_name
-                in: query
-                description: Name of volume
-                example: mysql-production
+                description: Name of project
                 required: true
                 schema:
                     type: string
@@ -217,7 +193,7 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -228,5 +204,4 @@ def BindService():
                 content:
                     application/json:
                         schema: ServerError
-    
     """

@@ -4,22 +4,24 @@ import sys
 from src.api import bp
 from src.schema.error_schema import *
 from src.schema.taskEvent_schema import *
-from src.schema.role_schema import *
+from src.schema.user_schema import *
 from src.schema.success_schema import *
 from flask import jsonify, request
 
+
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
-@bp.route('/app/service', methods=["GET"])
-def serviceInfo():
+
+@bp.route('/user/info', methods=["GET", "PUT"])
+def getUserInfo():
     """
-    Services is database or broker
+    Get information of user
     ---
     get:
-        summary: Get all services
+        summary: Get information of user
         tags:
-        - Apps
-        description: Get all services
+            - User
+        description: Get information of user
         parameters:
             -   name: cookie
                 in: header
@@ -33,7 +35,7 @@ def serviceInfo():
                 description: Success Response
                 content:
                     application/json:
-                        schema: ListServiceSchema
+                        schema: UserInfo
             401:
                 description: Access token is missing or invalid
                 content:
@@ -43,7 +45,54 @@ def serviceInfo():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
+            404:
+                description: Application Not Found
+                content:
+                    application/json:
+                        schema: PageNotFound
+            500:
+                description: Server Error
+                content:
+                    application/json:
+                        schema: ServerError
+    
+    put:
+        summary: Update information of user
+        tags:
+            - User
+        description: Update information of user
+        parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
+                required: true
+                schema:
+                    type: string
+            -   name: quota
+                in: query
+                description: Update quota of user
+                example: 10
+                required: true
+                schema:
+                    type: int
+        responses:
+            200:
+                description: Success Response
+                content:
+                    application/json:
+                        schema: DefaultSuccess
+            401:
+                description: Access token is missing or invalid
+                content:
+                    application/json:
+                        schema: UnauthorizedError
+            403:
+                description: Permission Deny
+                content:
+                    application/json:
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -56,62 +105,16 @@ def serviceInfo():
                         schema: ServerError
     """
 
-@bp.route('/app/service/bind', methods=["GET,POST,DELETE"])
-def BindService():
+@bp.route('/user/project', methods=["POST", "PUT", "DELETE"])
+def userProject():
     """
-    Create a service and bind into application
+    User vs Project
     ---
-    get:
-        summary: Get services already bind to an Application
-        tags:
-        - Apps
-        description: Get services already bind to an Application
-        parameters:
-            -   name: cookie
-                in: header
-                description: cookie for authentication
-                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
-                required: true
-                schema:
-                    type: string
-            -   name: app
-                in: query
-                description: Name of application
-                example: python-application
-                required: true
-                schema:
-                    type: string
-        responses:
-            200:
-                description: Success Response
-                content:
-                    application/json:
-                        schema: ListServiceSchema
-            401:
-                description: Access token is missing or invalid
-                content:
-                    application/json:
-                        schema: UnauthorizedError
-            403:
-                description: Permission Deny
-                content:
-                    application/json:
-                        schema: PermissionDeny
-            404:
-                description: Application Not Found
-                content:
-                    application/json:
-                        schema: PageNotFound
-            500:
-                description: Server Error
-                content:
-                    application/json:
-                        schema: ServerError
     post:
-        summary: Create service and bind to application
+        summary: Add user to a project
         tags:
-        - Apps
-        description: Create service and bind to application
+            - User
+        description: Add user to a project
         parameters:
             -   name: cookie
                 in: header
@@ -120,31 +123,21 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app_name
+            -   name: user_name
                 in: query
-                description: Name of application
-                example: python-application
+                description: Username of user
                 required: true
                 schema:
                     type: string
-            -   name: service_name
+            -   name: project_name
                 in: query
-                description: Name of service
-                example: mysql-production
+                description: Name of project
                 required: true
                 schema:
                     type: string
-            -   name: servicetype
+            -   name: role
                 in: query
-                description: type of services
-                example: mysql
-                required: true
-                schema:
-                    type: string
-            -   name: service_plan
-                in: query
-                description: Plan of services
-                example: 1c_1g
+                description: role of user in project
                 required: true
                 schema:
                     type: string
@@ -163,7 +156,65 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
+            404:
+                description: Application Not Found
+                content:
+                    application/json:
+                        schema: PageNotFound
+            500:
+                description: Server Error
+                content:
+                    application/json:
+                        schema: ServerError
+
+    put:
+        summary: Update user role in a project
+        tags:
+            - User
+        description: Update user role in a project
+        parameters:
+            -   name: cookie
+                in: header
+                description: cookie for authentication
+                example: QvJ9NLWOPi5v0XM2tOnz0neVdNI5489AkVw2tUPFsU0NHF7hyn
+                required: true
+                schema:
+                    type: string
+            -   name: user_name
+                in: query
+                description: Username of user
+                required: true
+                schema:
+                    type: string
+            -   name: project_name
+                in: query
+                description: Name of project
+                required: true
+                schema:
+                    type: string
+            -   name: role
+                in: query
+                description: role of user in project
+                required: true
+                schema:
+                    type: string
+        responses:
+            200:
+                description: Success Response
+                content:
+                    application/json:
+                        schema: DefaultSuccess
+            401:
+                description: Access token is missing or invalid
+                content:
+                    application/json:
+                        schema: UnauthorizedError
+            403:
+                description: Permission Deny
+                content:
+                    application/json:
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
@@ -176,10 +227,10 @@ def BindService():
                         schema: ServerError
 
     delete:
-        summary: Delete service
+        summary: Delete user role in a project
         tags:
-        - Apps
-        description: Delete service
+            - User
+        description: Delete user role in a project
         parameters:
             -   name: cookie
                 in: header
@@ -188,17 +239,21 @@ def BindService():
                 required: true
                 schema:
                     type: string
-            -   name: app
+            -   name: user_name
                 in: query
-                description: Name of application
-                example: python-application
+                description: Username of user
                 required: true
                 schema:
                     type: string
-            -   name: service_name
+            -   name: project_name
                 in: query
-                description: Name of volume
-                example: mysql-production
+                description: Name of project
+                required: true
+                schema:
+                    type: string
+            -   name: role
+                in: query
+                description: role of user in project
                 required: true
                 schema:
                     type: string
@@ -217,7 +272,7 @@ def BindService():
                 description: Permission Deny
                 content:
                     application/json:
-                        schema: PermissionDeny
+                        schema: UnauthorizedError
             404:
                 description: Application Not Found
                 content:
